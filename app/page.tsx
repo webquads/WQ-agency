@@ -1,6 +1,7 @@
+
 export default function Home() {
   return (
-    <div>
+    <div className=" bg-white">
       <h1>Web Quads</h1>
     </div>
   );
