@@ -1,7 +1,12 @@
+import HeroSection from "@/components/HeroSection/HeroSection";
+import NavMenu from "@/components/Navbar/NavMenu";
+
 export default function Home() {
   return (
     <div>
-      <h1>Web Quads</h1>
+      <NavMenu />
+
+      <HeroSection />
     </div>
   );
 }
