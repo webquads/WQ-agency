@@ -1,14 +1,14 @@
 // "use client";
 // import { useEffect, useState } from "react";
 const GradientBorderButton = ({ children }: { children: React.ReactNode }) => {
-//   const [degree, setDegree] = useState(0);
+  // const [degree, setDegree] = useState(0);
 
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setDegree((prev) => (prev >= 360 ? 0 : prev + 1));
-//     }, 8);
-//     return () => clearInterval(interval);
-//   }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setDegree((prev) => (prev >= 360 ? 0 : prev + 1));
+  //   }, 8);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     // <div

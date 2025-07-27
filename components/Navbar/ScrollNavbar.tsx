@@ -27,7 +27,11 @@ const ScrollNavbar = () => {
         <div ref={navRef} className="w-full h-full absolute top-0 left-0"></div>
       </div>
       <div className="w-full h-[60px] fixed top-0 left-0 flex items-center justify-center z-40">
-        <div className={`${isSticky? "w-[70%] rounded-full":"w-full"} h-full bg-gray-200 transition-all duration-600`}></div>
+        <div
+          className={`${
+            isSticky ? "w-[70%] rounded-full" : "w-full"
+          } h-full bg-gray-200 transition-all duration-600`}
+        ></div>
       </div>
     </nav>
   );

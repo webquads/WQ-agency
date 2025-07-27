@@ -1,7 +1,7 @@
+import MainLayout from "@/components/MainLayout";
 import type { Metadata } from "next";
 import { Instrument_Serif, Poppins } from "next/font/google";
 import "./globals.css";
-import MainLayout from "@/components/MainLayout";
 
 const poppins = Poppins({
   subsets: ["latin"],
