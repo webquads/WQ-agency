@@ -2,7 +2,7 @@ import { instrumentSerif } from "@/app/layout";
 
 const HeroText = () => {
   return (
-    <div className="text-center">
+    <div className="text-center z-30">
       <h2 className="text-6xl text-center font-bold text-gray-600 mb-4">
         Your Vision, Our Code
       </h2>
