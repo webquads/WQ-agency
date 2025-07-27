@@ -18,7 +18,7 @@ const TeamMembers = () => {
     };
   }, [id]);
   return (
-    <div className="w-full h-[55vh] bg-transparent border border-red-500 flex items-center justify-center relative overflow-hidden">
+    <div className="w-full h-[55vh] max-h-[500px] bg-transparent border border-red-500 flex items-center justify-center relative overflow-hidden">
       {/* <div
         id="3"
         className={`${
@@ -89,7 +89,7 @@ const TeamMembers = () => {
 
       <div
         id="1"
-        className={`h-full w-[19.8%] border bg-yellow-300 absolute transition-all duration-900 transform ${
+        className={`h-full w-[20%] border bg-yellow-300 absolute transition-all duration-900 transform ${
           id === 1
             ? "z-50"
             : id === 2
@@ -105,7 +105,7 @@ const TeamMembers = () => {
       </div>
       <div
         id="2"
-        className={`h-full w-[19.8%] border bg-blue-500 absolute transition-all duration-900 transform ${
+        className={`h-full w-[20%] border bg-blue-500 absolute transition-all duration-900 transform ${
           id === 2
             ? "z-50"
             : id === 3
@@ -122,7 +122,7 @@ const TeamMembers = () => {
 
       <div
         id="3"
-        className={`h-full w-[19.8%] border bg-green-400 absolute transition-all duration-900 transform ${
+        className={`h-full w-[20%] border bg-green-400 absolute transition-all duration-900 transform ${
           id === 3
             ? "z-50"
             : id === 4
@@ -139,7 +139,7 @@ const TeamMembers = () => {
 
       <div
         id="4"
-        className={`h-full w-[19.8%] border bg-blue-500 absolute transition-all duration-900 transform  ${
+        className={`h-full w-[20%] border bg-blue-500 absolute transition-all duration-900 transform  ${
           id === 4
             ? "z-50"
             : id === 5
@@ -155,7 +155,7 @@ const TeamMembers = () => {
       </div>
       <div
         id="5"
-        className={`h-full w-[19.8%] border bg-yellow-400 absolute transition-all duration-900 transform ${
+        className={`h-full w-[20%] border bg-yellow-400 absolute transition-all duration-900 transform ${
           id === 5
             ? "z-50"
             : id === 1
