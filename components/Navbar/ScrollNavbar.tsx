@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 const ScrollNavbar = () => {
   const [isSticky, setIsSticky] = useState(false);
-  const navRef = useRef<HTMLElement>(null);
+  const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const element = navRef.current;
@@ -22,27 +22,14 @@ const ScrollNavbar = () => {
   }, []);
 
   return (
-    <>
-      {/* Original Navbar - Slides up when hiding */}
-      <nav
-        ref={navRef}
-        className={`w-full h-[60px] bg-green-500 transition-all duration-500 ease-in-out ${
-          isSticky ? "opacity-0 -translate-y-full" : "opacity-100 translate-y-0"
-        }`}
-      >
-        all navbar menu content
-      </nav>
-
-      <div
-        className={`fixed top-0 left-0 w-full flex justify-center z-50 transition-all duration-500 ease-in-out ${
-          isSticky ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full"
-        }`}
-      >
-        <div className="w-[70%] h-[60px] bg-green-500 flex items-center justify-center rounded-full">
-          all navbar menu content
-        </div>
+    <nav className="w-full h-[60px]">
+      <div className="w-full h-full relative">
+        <div ref={navRef} className="w-full h-full absolute top-0 left-0"></div>
       </div>
-    </>
+      <div className="w-full h-[60px] fixed top-0 left-0 flex items-center justify-center z-40">
+        <div className={`${isSticky? "w-[70%] rounded-full":"w-full"} h-full bg-gray-200 transition-all duration-600`}></div>
+      </div>
+    </nav>
   );
 };
 
