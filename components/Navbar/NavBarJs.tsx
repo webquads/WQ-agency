@@ -12,6 +12,7 @@ export default function NavBarJs() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   const navLinks = ["Pricing", "About", "Press", "Support"];
   return (
     <nav
@@ -25,9 +26,9 @@ export default function NavBarJs() {
       }}
       className="mx-auto fixed top-0 left-0 right-0 z-50"
     >
-      <div className="relative flex items-center justify-between py-2 px-2 ">
+      <div className=" flex items-center justify-between py-2 px-2 ">
         <div className="flex items-center gap-5">
-          <div className="flex items-center justify-center bg-black w-8 h-8 rounded-full text-2xl ">
+          <div className="flex items-center justify-center   ">
             {/* Placeholder for  Logo */}
             LOGO
           </div>
@@ -40,7 +41,7 @@ export default function NavBarJs() {
             <a
               key={link}
               href="#"
-              className="text-sm text-gray-700 hover:text-black transition-colors"
+              className="text-sm text-shadow-white hover:text-black transition-colors"
             >
               {link}
             </a>

@@ -1,9 +1,9 @@
-import MainLayout from "@/components/MainLayout";
-
 import type { Metadata } from "next";
 
 import "./globals.css";
 
+import NavBarJs from "@/components/Navbar/NavBarJs";
+import ParticleBackground from "@/components/ParticleBackground";
 import { instrumentSerif, poppins } from "./font";
 
 export const metadata: Metadata = {
@@ -21,7 +21,9 @@ export default function RootLayout({
       <body
         className={`${poppins.className} ${instrumentSerif.className} antialiased`}
       >
-        <MainLayout>{children}</MainLayout>
+        <ParticleBackground />
+        <NavBarJs />
+        {children}
       </body>
     </html>
   );
