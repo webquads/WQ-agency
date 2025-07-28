@@ -1,17 +1,10 @@
-import MainLayout from "@/components/MainLayout";
 import type { Metadata } from "next";
-import { Instrument_Serif, Poppins } from "next/font/google";
+
 import "./globals.css";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400"],
-});
-export const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["italic"],
-});
+import NavBarJs from "@/components/Navbar/NavBarJs";
+import ParticleBackground from "@/components/ParticleBackground";
+import { instrumentSerif, poppins } from "./font";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,8 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className}  antialiased`}>
-        <MainLayout>{children}</MainLayout>
+      <body
+        className={`${poppins.className} ${instrumentSerif.className} antialiased`}
+      >
+        <ParticleBackground />
+        <NavBarJs />
+        {children}
       </body>
     </html>
   );

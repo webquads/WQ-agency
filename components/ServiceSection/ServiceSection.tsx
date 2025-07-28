@@ -1,5 +1,4 @@
-import { instrumentSerif } from "@/app/layout";
-import React from "react";
+import { instrumentSerif } from "@/app/font";
 
 const ServiceSection = () => {
   return (
