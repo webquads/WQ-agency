@@ -9,6 +9,14 @@ const GradientBorderButton = ({ children }: { children: React.ReactNode }) => {
   //     }, 8);
   //     return () => clearInterval(interval);
   //   }, []);
+  // const [degree, setDegree] = useState(0);
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setDegree((prev) => (prev >= 360 ? 0 : prev + 1));
+  //   }, 8);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     // <div
@@ -22,7 +30,7 @@ const GradientBorderButton = ({ children }: { children: React.ReactNode }) => {
     //   <div className="w-full h-full bg-black rounded-full"></div>
     // </div>
 
-    <div className="w-36 h-14 rounded-full relative overflow-hidden flex items-center justify-center group/buttonGlow hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.7)] transition-all duration-900">
+    <div className="w-36 h-14 rounded-full relative overflow-hidden flex items-center justify-center group/buttonGlow hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.7)] transition-all duration-900 z-30">
       <div
         //       className={` w-[120%] h-[60%]
         // bg-linear-to-l from-transparent from-65% to-[rgba(59,130,246,0.7)] to-35%

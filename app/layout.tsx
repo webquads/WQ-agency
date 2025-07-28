@@ -1,4 +1,5 @@
 import MainLayout from "@/components/MainLayout";
+
 import type { Metadata } from "next";
 
 import "./globals.css";
