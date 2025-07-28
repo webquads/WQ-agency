@@ -1,4 +1,3 @@
-import GradientBorderButton from "../Button";
 import TableShapeBackground from "../TableShapeBackground";
 import HeroText from "./HeroText";
 
@@ -9,7 +8,6 @@ const HeroSection = () => {
         <TableShapeBackground />
       </div>
       <HeroText />
-      <GradientBorderButton>Hello</GradientBorderButton>
     </div>
   );
 };

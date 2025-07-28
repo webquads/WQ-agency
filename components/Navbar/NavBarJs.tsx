@@ -17,22 +17,24 @@ export default function NavBarJs() {
   return (
     <nav
       style={{
-        width: isScrolled ? "50%" : "100%",
+        width: isScrolled ? "60%" : "100%",
         borderRadius: isScrolled ? "999px" : "0px",
         paddingLeft: isScrolled ? "16px" : "24px",
         paddingRight: isScrolled ? "16px" : "24px",
         transition: "all 0.3s ease-in-out",
-        backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.7)" : "transparent",
+        backgroundColor: isScrolled ? " rgb(119,136,153,0.8)" : "transparent",
       }}
       className="mx-auto fixed top-0 left-0 right-0 z-50"
     >
-      <div className=" flex items-center justify-between py-2 px-2 ">
-        <div className="flex items-center gap-5">
-          <div className="flex items-center justify-center   ">
+      <div className=" flex items-center justify-between py-2 px-2 z-50">
+        <div className="flex items-center gap-3">
+          <div className="flex items-center text-amber-100 justify-center   ">
             {/* Placeholder for  Logo */}
             LOGO
           </div>
-          <span className="font-bold text-3xl hidden sm:block">HERE</span>
+          <span className="font-bold text-2xl text-amber-100 hidden sm:block">
+            HERE
+          </span>
         </div>
 
         {/* Desktop Menu */}
@@ -41,7 +43,7 @@ export default function NavBarJs() {
             <a
               key={link}
               href="#"
-              className="text-sm text-shadow-white hover:text-black transition-colors"
+              className="text-[18px] text-white hover:text-black transition-colors"
             >
               {link}
             </a>
