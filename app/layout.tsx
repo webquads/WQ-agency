@@ -1,17 +1,9 @@
-import type { Metadata } from "next";
-import { Instrument_Serif, Poppins } from "next/font/google";
-import "./globals.css";
 import MainLayout from "@/components/MainLayout";
+import type { Metadata } from "next";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400"],
-});
-export const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["italic"],
-});
+import "./globals.css";
+
+import { instrumentSerif, poppins } from "./font";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className}  antialiased`}>
+      <body
+        className={`${poppins.className} ${instrumentSerif.className} antialiased`}
+      >
         <MainLayout>{children}</MainLayout>
       </body>
     </html>

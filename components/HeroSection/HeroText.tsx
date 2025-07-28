@@ -1,9 +1,11 @@
-import { instrumentSerif } from "@/app/layout";
+import { instrumentSerif, poppins } from "@/app/font";
 
 const HeroText = () => {
   return (
     <div className="text-center">
-      <h2 className="text-6xl text-center font-bold text-gray-600 mb-4">
+      <h2
+        className={`text-6xl text-center font-bold text-gray-600 mb-4 ${poppins.className}`}
+      >
         Your Vision, Our Code
       </h2>
       <h2
