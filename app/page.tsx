@@ -7,7 +7,6 @@ import HeroSection from "@/components/HeroSection/HeroSection";
 import ServiceSection from "@/components/ServiceSection/ServiceSection";
 import TableShapeBackground from "@/components/TableShapeBackground";
 import TeamMembers from "@/components/TeamMembers/TeamMembers";
-import AnimatedLogo from "./ui/components/LoadingAnimation/WebquadsAnimation";
 import PricingSection from "./ui/components/PricingSection/PricingSection";
 
 export default function Home() {
@@ -23,7 +22,6 @@ export default function Home() {
       <TeamMembers />
       <TableShapeBackground />
       <PricingSection />
-      <AnimatedLogo />
     </>
   );
 }
