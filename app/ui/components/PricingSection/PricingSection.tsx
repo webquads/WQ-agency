@@ -2,10 +2,24 @@
 import { Check, X } from "lucide-react";
 import { useState } from "react";
 
+interface Services {
+  name: string;
+  included: boolean; // Package IDs that include this feature
+}
+
+interface Packages {
+  id: string;
+  name: string;
+  price: number;
+  duration: string;
+  features: string[];
+  services: Services[];
+}
+
 const PricingSection = () => {
   const [selectedPackage, setSelectedPackage] = useState("basic");
 
-  const packages = [
+  const packages: Packages[] = [
     {
       id: "basic",
       name: "Basic Package",
@@ -86,7 +100,7 @@ const PricingSection = () => {
     "Maintenance & Support",
   ];
 
-  const getServiceAvailability = (service) => {
+  const getServiceAvailability = (service: string) => {
     const selectedPkg = packages.find((pkg) => pkg.id === selectedPackage);
     if (!selectedPkg) return false;
 
@@ -113,32 +127,32 @@ const PricingSection = () => {
       </div>
 
       {/* Main Content Container */}
-      <div className="max-w-7xl mx-auto px-4 pb-20">
-        <div className="bg-slate-800/40 backdrop-blur-sm rounded-3xl border border-slate-700/30 p-8">
-          <div className="grid lg:grid-cols-3 gap-12">
+      <div className="max-w-6xl mx-auto px-4 pb-20">
+        <div className="bg-slate-800/60 backdrop-blur-sm rounded-3xl border border-slate-700/50 p-8">
+          <div className="grid lg:grid-cols-12 gap-8">
             {/* Left Side - Pricing Cards */}
-            <div className="lg:col-span-1 space-y-4">
+            <div className="lg:col-span-5 space-y-3">
               {packages.map((pkg) => (
                 <div
                   key={pkg.id}
                   className={`cursor-pointer transition-all duration-300 ${
                     selectedPackage === pkg.id
                       ? "opacity-100"
-                      : "opacity-70 hover:opacity-90"
+                      : "opacity-80 hover:opacity-95"
                   }`}
                   onClick={() => setSelectedPackage(pkg.id)}
                 >
                   <div
-                    className={`bg-slate-800/60 backdrop-blur-sm rounded-xl border p-6 ${
+                    className={`bg-slate-800/80 backdrop-blur-sm rounded-xl border p-5 transition-all duration-300 ${
                       selectedPackage === pkg.id
-                        ? "border-orange-500/80"
-                        : "border-slate-600/50"
+                        ? "border-orange-500/90 shadow-lg shadow-orange-500/20"
+                        : "border-slate-600/60 hover:border-slate-500/80"
                     }`}
                   >
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center">
                         <div
-                          className={`w-4 h-4 rounded-full border-2 mr-3 ${
+                          className={`w-4 h-4 rounded-full border-2 mr-3 transition-colors duration-300 ${
                             selectedPackage === pkg.id
                               ? "border-orange-500"
                               : "border-slate-500"
@@ -153,7 +167,7 @@ const PricingSection = () => {
                         </h3>
                       </div>
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-white">
+                        <div className="text-xl font-bold text-white">
                           ${pkg.price.toLocaleString()}
                         </div>
                         <div className="text-sm text-slate-400">
@@ -162,13 +176,19 @@ const PricingSection = () => {
                       </div>
                     </div>
 
-                    <div className="space-y-2">
+                    <div
+                      className={`flex flex-wrap gap-x-4 gap-y-1 transition-all duration-300 ${
+                        selectedPackage === pkg.id
+                          ? "opacity-100 max-h-20"
+                          : "opacity-0 max-h-0 overflow-hidden"
+                      }`}
+                    >
                       {pkg.features.map((feature, index) => (
                         <div
                           key={index}
                           className="flex items-center text-sm text-slate-300"
                         >
-                          <Check className="w-4 h-4 text-green-400 mr-2" />
+                          <Check className="w-3 h-3 text-green-400 mr-1" />
                           {feature}
                         </div>
                       ))}
@@ -179,22 +199,22 @@ const PricingSection = () => {
             </div>
 
             {/* Right Side - Dynamic Services List */}
-            <div className=" mx-auto lg:col-span-2">
-              <div className="space-y-5">
+            <div className="lg:col-span-7">
+              <div className="space-y-4">
                 {allServices.map((service, index) => {
                   const isIncluded = getServiceAvailability(service);
                   return (
                     <div
                       key={index}
-                      className="flex items-center transition-all duration-500"
+                      className="flex items-center transition-all duration-500 ease-in-out"
                     >
                       {isIncluded ? (
-                        <Check className="w-6 h-6 text-green-400 mr-4 flex-shrink-0" />
+                        <Check className="w-5 h-5 text-green-400 mr-4 flex-shrink-0 transition-all duration-500" />
                       ) : (
-                        <X className="w-6 h-6 text-red-400 mr-4 flex-shrink-0" />
+                        <X className="w-5 h-5 text-red-400 mr-4 flex-shrink-0 transition-all duration-500" />
                       )}
                       <span
-                        className={`text-lg font-medium transition-colors duration-500 ${
+                        className={`text-base font-medium transition-all duration-500 ${
                           isIncluded ? "text-slate-200" : "text-slate-500"
                         }`}
                       >
@@ -210,7 +230,7 @@ const PricingSection = () => {
 
         {/* Get Started Section */}
         <div className="text-center mt-12">
-          <button className="bg-slate-800 hover:bg-slate-700 text-white px-12 py-4 rounded-xl font-semibold transition-all duration-200 border border-slate-700">
+          <button className="bg-gradient-to-r from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 text-white px-16 py-4 rounded-xl font-semibold transition-all duration-300 border border-slate-600/50 shadow-lg">
             Get Started
           </button>
         </div>

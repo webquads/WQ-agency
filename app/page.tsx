@@ -7,6 +7,7 @@ import HeroSection from "@/components/HeroSection/HeroSection";
 import ServiceSection from "@/components/ServiceSection/ServiceSection";
 import TableShapeBackground from "@/components/TableShapeBackground";
 import TeamMembers from "@/components/TeamMembers/TeamMembers";
+import PricingSection from "./ui/components/PricingSection/PricingSection";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <ContactSection />
       <TeamMembers />
       <TableShapeBackground />
+      <PricingSection />
     </>
   );
 }
