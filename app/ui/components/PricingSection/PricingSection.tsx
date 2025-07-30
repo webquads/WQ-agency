@@ -1,6 +1,8 @@
 "use client";
 
+import { Check, X } from "lucide-react";
 import { useState } from "react";
+import GradientBorderButton from "../Button";
 
 interface Services {
   name: string;
@@ -131,7 +133,7 @@ const PricingSection = () => {
         <div className="bg-slate-800/60 backdrop-blur-sm rounded-3xl border border-slate-700/50 p-8">
           <div className="grid lg:grid-cols-12 gap-8">
             {/* Left Side - Pricing Cards */}
-            <div className="lg:col-span-5 space-y-3">
+            <div className="lg:col-span-5 my-auto space-y-3">
               {packages.map((pkg) => (
                 <div
                   key={pkg.id}
@@ -176,22 +178,27 @@ const PricingSection = () => {
                       </div>
                     </div>
 
+                    {/* Features section with CSS Grid animation */}
                     <div
-                      className={`flex flex-wrap gap-x-4 gap-y-1 transition-all duration-300 ${
+                      className={`grid transition-all duration-500 ease-in-out overflow-hidden ${
                         selectedPackage === pkg.id
-                          ? "opacity-100 max-h-20"
-                          : "opacity-0 max-h-0 overflow-hidden"
+                          ? "grid-rows-[1fr] opacity-100 mt-3"
+                          : "grid-rows-[0fr] opacity-0 mt-0"
                       }`}
                     >
-                      {pkg.features.map((feature, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center text-sm text-slate-300"
-                        >
-                          <Check className="w-3 h-3 text-green-400 mr-1" />
-                          {feature}
+                      <div className="min-h-0">
+                        <div className="flex flex-wrap gap-x-4 gap-y-1 pb-1">
+                          {pkg.features.map((feature, index) => (
+                            <div
+                              key={index}
+                              className="flex items-center text-sm text-slate-300"
+                            >
+                              <Check className="w-3 h-3 text-green-400 mr-1" />
+                              {feature}
+                            </div>
+                          ))}
                         </div>
-                      ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -229,13 +236,10 @@ const PricingSection = () => {
         </div>
 
         {/* Get Started Section */}
-        <GradientBorderButton className="mt-4 w-48 text-lg">
-          Custom Button
-        </GradientBorderButton>
 
-        {/* <GradientBorderButton className="text-center mt-12">
+        <GradientBorderButton className="text-center m-auto mt-12">
           Get Started
-        </GradientBorderButton> */}
+        </GradientBorderButton>
       </div>
     </div>
   );
