@@ -89,7 +89,7 @@ const TeamMembers = () => {
 
       <div
         id="1"
-        className={`h-full w-[20%] border bg-yellow-300 absolute transition-all duration-900 transform ${
+        className={`h-full w-[20%] border bg-yellow-300 absolute transition-all duration-900 transform flex items-center justify-center ${
           id === 1
             ? "z-50"
             : id === 2
@@ -97,7 +97,7 @@ const TeamMembers = () => {
             : id === 3
             ? "-translate-x-[180%] -rotate-8 translate-y-22 z-30"
             : id === 4
-            ? "translate-x-[180%] rotate-8 translate-y-22 z-30"
+            ? "animate-[teamCard_1s_forwards] z-30"
             : id === 5 && "translate-x-[90%] translate-y-8 rotate-4 z-40"
         }`}
       >
@@ -105,7 +105,7 @@ const TeamMembers = () => {
       </div>
       <div
         id="2"
-        className={`h-full w-[20%] border bg-blue-500 absolute transition-all duration-900 transform ${
+        className={`h-full w-[20%] border bg-blue-500 absolute transition-all duration-900 transform flex items-center justify-center ${
           id === 2
             ? "z-50"
             : id === 3
@@ -113,7 +113,7 @@ const TeamMembers = () => {
             : id === 4
             ? "-translate-x-[180%] -rotate-8 translate-y-22 z-30"
             : id === 5
-            ? "translate-x-[180%] rotate-8 translate-y-22 z-30"
+            ? "animate-[teamCard_1s_forwards] z-30"
             : id === 1 && "translate-x-[90%] translate-y-8 rotate-4 z-40"
         }`}
       >
@@ -122,7 +122,7 @@ const TeamMembers = () => {
 
       <div
         id="3"
-        className={`h-full w-[20%] border bg-green-400 absolute transition-all duration-900 transform ${
+        className={`h-full w-[20%] border bg-green-400 absolute transition-all duration-900 transform flex items-center justify-center ${
           id === 3
             ? "z-50"
             : id === 4
@@ -130,7 +130,7 @@ const TeamMembers = () => {
             : id === 5
             ? "-translate-x-[180%] -rotate-8 translate-y-22 z-30"
             : id === 1
-            ? "translate-x-[180%] rotate-8 translate-y-22 z-30"
+            ? "animate-[teamCard_1s_forwards] z-30"
             : id === 2 && "translate-x-[90%] translate-y-8 rotate-4 z-40"
         }`}
       >
@@ -139,7 +139,7 @@ const TeamMembers = () => {
 
       <div
         id="4"
-        className={`h-full w-[20%] border bg-blue-500 absolute transition-all duration-900 transform  ${
+        className={`h-full w-[20%] border bg-blue-500 absolute transition-all duration-900 transform flex items-center justify-center ${
           id === 4
             ? "z-50"
             : id === 5
@@ -147,7 +147,7 @@ const TeamMembers = () => {
             : id === 1
             ? "-translate-x-[180%] -rotate-8 translate-y-22 z-30"
             : id === 2
-            ? "translate-x-[180%] rotate-8 translate-y-22 z-30"
+            ? "animate-[teamCard_1s_forwards] z-30"
             : id === 3 && "translate-x-[90%] translate-y-8 rotate-4 z-40"
         }`}
       >
@@ -155,7 +155,7 @@ const TeamMembers = () => {
       </div>
       <div
         id="5"
-        className={`h-full w-[20%] border bg-yellow-400 absolute transition-all duration-900 transform ${
+        className={`h-full w-[20%] border bg-yellow-400 absolute transition-all duration-900 transform flex items-center justify-center ${
           id === 5
             ? "z-50"
             : id === 1
@@ -163,7 +163,7 @@ const TeamMembers = () => {
             : id === 2
             ? "-translate-x-[180%] -rotate-8 translate-y-22 z-30"
             : id === 3
-            ? "translate-x-[180%] rotate-8 translate-y-22 z-30"
+            ? "animate-[teamCard_1s_forwards] z-30"
             : id === 4 && "translate-x-[90%] translate-y-8 rotate-4 z-40"
         }`}
       >
