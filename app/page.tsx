@@ -7,7 +7,14 @@ import HeroSection from "@/app/ui/components/HeroSection/HeroSection";
 import ServiceSection from "@/app/ui/components/ServiceSection/ServiceSection";
 import TableShapeBackground from "@/app/ui/components/TableShapeBackground";
 import TeamMembers from "@/app/ui/components/TeamMembers/TeamMembers";
+
+import AnimatedDualLogo from "./ui/components/LoadingAnimation/AnimatedDualLogo";
+import AnimatedSVGLogo from "./ui/components/LoadingAnimation/AnimatedSVGLogo";
+import AnimatedLogo from "./ui/components/LoadingAnimation/WebquadsAnimation";
 import PricingSection from "./ui/components/PricingSection/PricingSection";
+import TestimonialsSection from "./ui/components/Testimonials/Testimonial";
+
+// Your SVG content as a string
 
 export default function Home() {
   return (
@@ -22,6 +29,36 @@ export default function Home() {
       <TeamMembers />
       <TableShapeBackground />
       <PricingSection />
+      <TestimonialsSection />
+      <div className="flex justify-center items-center">
+        {" "}
+        <AnimatedLogo
+          src="/animLogo.png"
+          alt="Company Logo"
+          width={300}
+          height={300}
+          duration={2.5}
+          repeatDelay={0.5}
+          minScale={0.3} // Start at 30% size
+          maxScale={1} // Grow to 100% size
+        />
+        <AnimatedSVGLogo
+          src="/animLogo.png"
+          alt="Company Logo"
+          width={300}
+          height={300}
+          duration={4}
+          minScale={0.3}
+        />
+        <AnimatedDualLogo
+          fullLogoSrc="/animLogo.png"
+          part1Src="/logoPart1.png"
+          part2Src="/logoPart2.png"
+          width={300}
+          height={300}
+          duration={5} // Total animation cycle in seconds
+        />
+      </div>
     </>
   );
 }

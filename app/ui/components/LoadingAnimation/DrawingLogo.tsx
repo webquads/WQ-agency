@@ -1,10 +1,10 @@
-// components/AnimatedLogo.tsx
-"use client"; // This directive marks it as a client component
+// components/DrawingLogo.tsx
+"use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-interface AnimatedLogoProps {
+interface DrawingLogoProps {
   src: string;
   alt?: string;
   width?: number;
@@ -12,11 +12,9 @@ interface AnimatedLogoProps {
   duration?: number;
   delay?: number;
   repeatDelay?: number;
-  minScale?: number;
-  maxScale?: number;
 }
 
-export default function AnimatedLogo({
+export default function DrawingLogo({
   src,
   alt = "Logo",
   width = 200,
@@ -24,13 +22,19 @@ export default function AnimatedLogo({
   duration = 2,
   delay = 0,
   repeatDelay = 1,
-  minScale = 0.5,
-  maxScale = 1,
-}: AnimatedLogoProps) {
+}: DrawingLogoProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: minScale }}
-      animate={{ opacity: 1, scale: maxScale }}
+      initial={{
+        opacity: 0,
+        scale: 0.3,
+        rotate: -10,
+      }}
+      animate={{
+        opacity: 1,
+        scale: 1,
+        rotate: 0,
+      }}
       transition={{
         duration,
         delay,
