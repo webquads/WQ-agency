@@ -1,6 +1,6 @@
 import Image from "next/image";
-import logo2 from "../public/images/webQuads_logo-Q2.png";
-import logo from "../public/images/webQuads_logoQ.png";
+import logo2 from "../../../public/images/webQuads_logo-Q2.png";
+import logo from "../../../public/images/webQuads_logoQ.png";
 
 export default function Logo() {
   return (
