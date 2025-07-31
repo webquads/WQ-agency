@@ -113,7 +113,7 @@ const PricingSection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-black to-slate-900 text-white">
+    <div className="min-h-screen  text-white">
       {/* Header */}
       <div className="pt-20 pb-16 text-center">
         <div className="inline-block px-4 py-2 mb-6 text-sm font-medium text-orange-400 bg-orange-400/10 rounded-full border border-orange-400/20">
@@ -130,7 +130,7 @@ const PricingSection = () => {
 
       {/* Main Content Container */}
       <div className="max-w-6xl mx-auto px-4 pb-20">
-        <div className="bg-slate-800/60 backdrop-blur-sm rounded-3xl border border-slate-700/50 p-8">
+        <div className=" rounded-3xl border border-slate-700/50 p-8">
           <div className="grid lg:grid-cols-12 gap-8">
             {/* Left Side - Pricing Cards */}
             <div className="lg:col-span-5 my-auto space-y-3">
@@ -145,9 +145,9 @@ const PricingSection = () => {
                   onClick={() => setSelectedPackage(pkg.id)}
                 >
                   <div
-                    className={`bg-slate-800/80 backdrop-blur-sm rounded-xl border p-5 transition-all duration-300 ${
+                    className={` rounded-xl border p-5 transition-all duration-300 ${
                       selectedPackage === pkg.id
-                        ? "border-orange-500/90 shadow-lg shadow-orange-500/20"
+                        ? "border-orange-500/90  bg-slate-800/80 backdrop-blur-sm shadow-lg shadow-orange-500/20"
                         : "border-slate-600/60 hover:border-slate-500/80"
                     }`}
                   >
@@ -206,7 +206,7 @@ const PricingSection = () => {
             </div>
 
             {/* Right Side - Dynamic Services List */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 bg-slate-800/60 backdrop-blur-sm rounded-3xl border border-slate-700/50 p-8">
               <div className="space-y-4">
                 {allServices.map((service, index) => {
                   const isIncluded = getServiceAvailability(service);
