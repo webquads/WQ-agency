@@ -57,6 +57,7 @@ const TableShapeBackground = () => {
           ))}
         </tbody>
       </table>
+      <div className="w-full h-full absolute top-0 left-0 pointer-events-none bg-radial from-transparent from-30% to-black"></div>
     </div>
   );
 };
