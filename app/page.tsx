@@ -13,6 +13,8 @@ import AnimatedLogo from "./ui/components/LoadingAnimation/WebquadsAnimation";
 import LogoLoading from "./ui/components/LogoLoading";
 import PricingSection from "./ui/components/PricingSection/PricingSection";
 import TestimonialsSection from "./ui/components/Testimonials/Testimonial";
+import Portfolio from "./ui/components/Portfolio/Portfolio";
+import About from "./ui/components/About/About";
 
 // Your SVG content as a string
 
@@ -24,7 +26,9 @@ export default function Home() {
       {/* <NavbarMotion /> */}
       {/* <Navbar /> */}
       <HeroSection />
+      <About/>
       <ServiceSection />
+      <Portfolio/>
       <ContactSection />
       <TeamMembers />
       <PricingSection />

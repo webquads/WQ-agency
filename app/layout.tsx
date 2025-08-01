@@ -4,7 +4,7 @@ import "./globals.css";
 
 import NavBarJs from "@/app/ui/components/Navbar/NavBarJs";
 import ParticleBackground from "@/app/ui/components/ParticleBackground";
-import { instrumentSerif, poppins } from "./font";
+import { poppins } from "./font";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} ${instrumentSerif.className} antialiased`}
+        className={`${poppins.className} antialiased`}
       >
         <ParticleBackground />
         <NavBarJs />

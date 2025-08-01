@@ -27,7 +27,7 @@ const ParticleBackground = () => {
     canvas.height = window.innerHeight;
 
     // Create dots with random positions and velocities
-    const dotCount = 100;
+    const dotCount = 50;
     const dots: Dot[] = [];
 
     for (let i = 0; i < dotCount; i++) {
