@@ -3,6 +3,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronUp, Code, Palette, Search, Star, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 
+// Define a type for the star properties
+interface Star {
+  id: number;
+  top: string;
+  left: string;
+  animationDelay: string;
+}
+
 const testimonials = [
   {
     id: 1,
@@ -49,6 +57,8 @@ const testimonials = [
 const TestimonialsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  // don’t render anything until we are on the client
+  const [mounted, setMounted] = useState(false);
 
   // Auto-cycle through testimonials
   useEffect(() => {
@@ -65,6 +75,10 @@ const TestimonialsSection = () => {
     // Resume auto-play after 10 seconds of inactivity
     setTimeout(() => setIsAutoPlaying(true), 10000);
   };
+
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (

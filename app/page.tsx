@@ -8,10 +8,11 @@ import ServiceSection from "@/app/ui/components/ServiceSection/ServiceSection";
 import TeamMembers from "@/app/ui/components/TeamMembers/TeamMembers";
 import AnimatedDualLogo from "./ui/components/LoadingAnimation/AnimatedDualLogo";
 import AnimatedSVGLogo from "./ui/components/LoadingAnimation/AnimatedSVGLogo";
+import AnimatedDualLogo1 from "./ui/components/LoadingAnimation/DrawingLogo1";
 import AnimatedLogo from "./ui/components/LoadingAnimation/WebquadsAnimation";
+import LogoLoading from "./ui/components/LogoLoading";
 import PricingSection from "./ui/components/PricingSection/PricingSection";
 import TestimonialsSection from "./ui/components/Testimonials/Testimonial";
-import LogoLoading from "./ui/components/LogoLoading";
 
 // Your SVG content as a string
 
@@ -56,8 +57,16 @@ export default function Home() {
           height={300}
           duration={5}
         />
+        <AnimatedDualLogo1
+          fullLogoSrc="/animLogo.png"
+          part1Src="/logoPart1.png"
+          part2Src="/logoPart2.png"
+          width={300}
+          height={300}
+          duration={5}
+        />
       </div>
-      <LogoLoading/>
+      <LogoLoading />
     </>
   );
 }
