@@ -48,7 +48,19 @@ const ServiceSection = () => {
   ];
 
   return (
-    <section className="bg-slate-900 py-16 px-4">
+    <section className="py-16 px-4">
+      <div className=" pb-8 text-center">
+        <div className="inline-block px-4 py-2 mb-6 text-sm font-medium text-white bg-slate-800/50 rounded-full border border-slate-800/70">
+          Services
+        </div>
+        <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+          SEO Strategies
+          <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+            For Business Growth
+          </span>
+        </h1>
+      </div>
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => {
@@ -56,7 +68,7 @@ const ServiceSection = () => {
             return (
               <div
                 key={index}
-                className="bg-slate-800/50 border-2 border-slate-700/50 rounded-xl p-8 hover:bg-slate-800/70 transition-all duration-300 hover:border-orange-500/50  group cursor-pointer hover:scale-105"
+                className="bg-slate-800/50 border-2 border-slate-700/50 rounded-xl p-8 hover:bg-slate-800 transition-all duration-300 hover:border-orange-500/50  group cursor-pointer hover:scale-105"
               >
                 <div className="flex flex-col items-center text-center space-y-4">
                   {/* Icon Container */}
