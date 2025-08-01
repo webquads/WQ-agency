@@ -70,3 +70,24 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
+
+@keyframes loader {
+  0%, 100% {
+    opacity: 100%;
+  }
+  50%{
+    opacity: 0%;
+  }
+}
+
+@keyframes teamCard {
+  0% {
+    transform: translateX(-180%) translateY(88px) rotate(8deg);
+  }
+  50%{
+    transform: translateX(180%) translateY(800px) rotate(8deg)
+  }
+  100%{
+    transform: translateX(180%) translateY(88px) rotate(8deg);
+  }
+}

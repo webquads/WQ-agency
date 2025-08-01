@@ -1,6 +1,7 @@
 "use client";
 import { ArrowUpRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import Logo from "../Logo";
 export default function NavBarJs() {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -19,22 +20,20 @@ export default function NavBarJs() {
       style={{
         width: isScrolled ? "60%" : "100%",
         borderRadius: isScrolled ? "999px" : "0px",
+        border: isScrolled ? "1px solid rgb(85,85,85)" : "0px",
+
         paddingLeft: isScrolled ? "16px" : "24px",
         paddingRight: isScrolled ? "16px" : "24px",
         transition: "all 0.3s ease-in-out",
-        backgroundColor: isScrolled ? " rgb(119,136,153,0.8)" : "transparent",
+        backgroundColor: isScrolled ? "  rgb(35,43,43,0.6)" : "transparent",
       }}
-      className="mx-auto fixed top-0 left-0 right-0 z-50"
+      className="mx-auto fixed top-5 left-0 right-0 z-150"
     >
       <div className=" flex items-center justify-between py-2 px-2 z-50">
         <div className="flex items-center gap-3">
           <div className="flex items-center text-amber-100 justify-center   ">
-            {/* Placeholder for  Logo */}
-            LOGO
+            <Logo />
           </div>
-          <span className="font-bold text-2xl text-amber-100 hidden sm:block">
-            HERE
-          </span>
         </div>
 
         {/* Desktop Menu */}
