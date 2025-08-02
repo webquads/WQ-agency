@@ -34,7 +34,7 @@ const TrustIndicator = () => {
                 </div>
               </div>
               <div className="w-full h-full rounded-full absolute flex items-center justify-center">
-                <div className="h-[80%] aspect-square rounded-full bg-conic-295 from-transparent to-blue-600 from-40% relative p-[2px] animate-[spin_7s_linear_infinite] transform -rotate-180 border">
+                <div className="h-[80%] aspect-square rounded-full bg-conic-300 from-transparent to-blue-600 from-40% relative p-[2px] animate-[spin_7s_linear_infinite] transform -rotate-180 border">
                   <div className="w-full h-full bg-black rounded-full"></div>
                   <div className="w-[70px] aspect-square rounded-full bg-gray-400/50 absolute top-12 flex items-center justify-center animate-[spin_7s_reverse_linear_infinite] text-4xl transform rotate-180 text-white">
                     B

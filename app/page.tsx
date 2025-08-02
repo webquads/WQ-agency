@@ -6,15 +6,16 @@ import HeroSection from "@/app/ui/components/HeroSection/HeroSection";
 // import NavbarMotion from "@/components/Navbar/NavbarMotion";
 import ServiceSection from "@/app/ui/components/ServiceSection/ServiceSection";
 import TeamMembers from "@/app/ui/components/TeamMembers/TeamMembers";
+import About from "./ui/components/About/About";
 import AnimatedDualLogo from "./ui/components/LoadingAnimation/AnimatedDualLogo";
 import AnimatedSVGLogo from "./ui/components/LoadingAnimation/AnimatedSVGLogo";
 import AnimatedDualLogo1 from "./ui/components/LoadingAnimation/DrawingLogo1";
 import AnimatedLogo from "./ui/components/LoadingAnimation/WebquadsAnimation";
 import LogoLoading from "./ui/components/LogoLoading";
-import PricingSection from "./ui/components/PricingSection/PricingSection";
-import TestimonialsSection from "./ui/components/Testimonials/Testimonial";
 import Portfolio from "./ui/components/Portfolio/Portfolio";
-import About from "./ui/components/About/About";
+import PricingSection from "./ui/components/PricingSection/PricingSection";
+import Process from "./ui/components/Process/Process";
+import TestimonialsSection from "./ui/components/Testimonials/Testimonial";
 import TrustIndicator from "./ui/components/TrustIndicator/TrustIndicator";
 
 // Your SVG content as a string
@@ -27,13 +28,14 @@ export default function Home() {
       {/* <NavbarMotion /> */}
       {/* <Navbar /> */}
       <HeroSection />
-      <About/>
+      <About />
       <ServiceSection />
-      <Portfolio/>
+      <Portfolio />
+      <Process />
       <ContactSection />
       <TeamMembers />
       <PricingSection />
-      <TrustIndicator/>
+      <TrustIndicator />
       <TestimonialsSection />
       <div className="flex justify-center items-center">
         {" "}
