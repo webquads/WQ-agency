@@ -20,7 +20,7 @@ const TrustIndicator = () => {
             content that resonates with your target audience By optimizing
             social media profiles, creating shareable content.
           </p>
-          <GradientBorderButton>See out plan</GradientBorderButton>
+          <GradientBorderButton>See our plan</GradientBorderButton>
         </div>
         <div className="w-[50%] h-full relative">
           <div className="w-full h-full flex items-center justify-end absolute">
