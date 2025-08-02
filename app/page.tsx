@@ -15,6 +15,7 @@ import PricingSection from "./ui/components/PricingSection/PricingSection";
 import TestimonialsSection from "./ui/components/Testimonials/Testimonial";
 import Portfolio from "./ui/components/Portfolio/Portfolio";
 import About from "./ui/components/About/About";
+import TrustIndicator from "./ui/components/TrustIndicator/TrustIndicator";
 
 // Your SVG content as a string
 
@@ -32,6 +33,7 @@ export default function Home() {
       <ContactSection />
       <TeamMembers />
       <PricingSection />
+      <TrustIndicator/>
       <TestimonialsSection />
       <div className="flex justify-center items-center">
         {" "}
