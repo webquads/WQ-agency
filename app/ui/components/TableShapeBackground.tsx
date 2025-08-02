@@ -1,9 +1,14 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const TableShapeBackground = () => {
-  // Pre-calculate colors to avoid repeated calculations
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const colors = useMemo(
     () => [
       "bg-red-400",
@@ -28,37 +33,89 @@ const TableShapeBackground = () => {
     []
   );
 
-  // Significantly reduce the grid size for better performance
-  const rows = 35; // Reduced from 55
-  const cols = 45; // Reduced from 90
+  const rows = 20;
+  const cols = 40;
 
-  // Pre-generate all cells with colors to avoid calculations during render
+  // Simple seeded random function for consistent results
+  const seededRandom = (seed: number) => {
+    const x = Math.sin(seed) * 10000;
+    return x - Math.floor(x);
+  };
+
   const cells = useMemo(() => {
+    if (!isClient) {
+      // Return empty array during SSR
+      return Array(rows)
+        .fill(null)
+        .map((_, i) =>
+          Array(cols)
+            .fill(null)
+            .map((_, j) => ({
+              id: `${i}-${j}`,
+              color: "bg-transparent", // Default color during SSR
+            }))
+        );
+    }
+
     const cellArray = [];
     for (let i = 0; i < rows; i++) {
       const row = [];
       for (let j = 0; j < cols; j++) {
+        const seed = i * cols + j;
+        const randomIndex = Math.floor(seededRandom(seed) * colors.length);
         row.push({
           id: `${i}-${j}`,
-          color: colors[Math.floor(Math.random() * colors.length)],
+          color: colors[randomIndex],
         });
       }
       cellArray.push(row);
     }
     return cellArray;
-  }, [colors, rows, cols]);
+  }, [colors, rows, cols, isClient]);
+
+  // Show loading state or simplified version during SSR
+  if (!isClient) {
+    return (
+      <div className="w-full h-full overflow-hidden relative">
+        <div
+          className="absolute top-0 left-0 transform origin-top -skew-x-[30deg]"
+          style={{
+            width: "135%",
+            height: "100%",
+          }}
+        >
+          <div
+            className="grid"
+            style={{
+              gridTemplateColumns: `repeat(${cols}, 1fr)`,
+              gridTemplateRows: `repeat(${rows}, 1fr)`,
+              height: "100%",
+            }}
+          >
+            {cells.flat().map((cell) => (
+              <div
+                key={cell.id}
+                className="group relative border border-[rgba(60,60,60,0.21)]"
+              ></div>
+            ))}
+          </div>
+        </div>
+        <div className="w-full h-full absolute top-0 left-0 pointer-events-none bg-radial from-transparent to-black from-30%" />
+      </div>
+    );
+  }
 
   return (
     <div className="w-full h-full overflow-hidden relative">
       <div
-        className="absolute top-0 left-0 transform origin-top -skew-x-[40deg]"
+        className="absolute top-0 left-0 transform origin-top -skew-x-[30deg]"
         style={{
-          width: "150%", // Reduced from 300%
-          height: "150%", // Reduced from 300%
+          width: "135%",
+          height: "100%",
         }}
       >
         <div
-          className="grid gap-px"
+          className="grid"
           style={{
             gridTemplateColumns: `repeat(${cols}, 1fr)`,
             gridTemplateRows: `repeat(${rows}, 1fr)`,
@@ -68,16 +125,16 @@ const TableShapeBackground = () => {
           {cells.flat().map((cell) => (
             <div
               key={cell.id}
-              className="group relative border border-opacity-10"
+              className="group relative border border-[rgba(60,60,60,0.21)]"
             >
               <div
-                className={`w-full h-full ${cell.color} opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100 group-hover:transition-none`}
+                className={`w-full h-full ${cell.color} opacity-0 transition-opacity duration-700 ease-out group-hover:opacity-100 group-hover:transition-none`}
               />
             </div>
           ))}
         </div>
       </div>
-      <div className="w-full h-full absolute top-0 left-0 pointer-events-none bg-gradient-radial from-transparent from-30% to-black" />
+      <div className="w-full h-full absolute top-0 left-0 pointer-events-none bg-radial from-transparent to-black from-30%" />
     </div>
   );
 };
