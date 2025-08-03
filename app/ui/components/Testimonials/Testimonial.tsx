@@ -92,7 +92,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white py-20 px-4 relative overflow-hidden">
+    <div className="min-h-screen  text-white py-20 px-4 relative overflow-hidden">
       {/* Background dots pattern */}
       <div className="absolute inset-0 opacity-20">
         {Array.from({ length: 50 }).map((_, i) => (
