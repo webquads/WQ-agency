@@ -91,3 +91,12 @@ body {
     transform: translateX(180%) translateY(88px) rotate(8deg);
   }
 }
+
+@keyframes marquee {
+  from{
+    transform: translateX(0)
+  }
+  to{
+    transform: translateX(-50%)
+  }
+}

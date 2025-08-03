@@ -51,7 +51,7 @@ const ServiceSection = () => {
     <section className="py-16 px-4">
       <div className=" pb-8 text-center">
         <div className="inline-block px-4 py-2 mb-6 text-sm font-medium text-white bg-slate-800/50 rounded-full border border-slate-800/70">
-          Services
+          Our Services
         </div>
         <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
           SEO Strategies
