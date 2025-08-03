@@ -49,14 +49,6 @@ export default function Home() {
           duration={4}
           minScale={0.3}
         />
-        <AnimatedDualLogo
-          fullLogoSrc="/animLogo.png"
-          part1Src="/logoPart1.png"
-          part2Src="/logoPart2.png"
-          width={300}
-          height={300}
-          duration={5}
-        />
         <AnimatedDualLogo1
           fullLogoSrc="/animLogo.png"
           part1Src="/logoPart1.png"
