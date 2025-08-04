@@ -1,5 +1,6 @@
-import dynamic from "next/dynamic";
 import HeroSection from "@/app/ui/components/HeroSection/HeroSection";
+import dynamic from "next/dynamic";
+import BlogSectionDemo from "./ui/components/Blog/BlogSectionDemo";
 
 // Lazy load non-critical components
 const About = dynamic(() => import("./ui/components/About/About"));
@@ -44,7 +45,7 @@ export default function Home() {
     <>
       {/* Load hero section immediately */}
       <HeroSection />
-
+      <BlogSectionDemo />
       {/* Lazy load other sections */}
       <About />
       <ServiceSection />

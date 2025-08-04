@@ -12,12 +12,10 @@ const LogoLoading = () => {
   }, []);
 
   return (
-    <div className="w-full h-screen flex items-center justify-center">
+    <div className="w-full h-screen overflow-hidden flex items-center justify-center">
       <div
         className={`${
-          loading
-            ? "w-fit animate-[loader_3s_linear_infinite]"
-            : "w-full"
+          loading ? "w-fit animate-[loader_3s_linear_infinite]" : "w-full"
         } flex items-center justify-center`}
       >
         <span
