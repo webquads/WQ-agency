@@ -44,7 +44,7 @@ const BlogSection = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-tr from-black via-gray-900 to-black text-white flex flex-col items-center px-6 py-16 sm:py-24 font-sans">
+    <div className="min-h-screen  text-white flex flex-col items-center px-6 py-16 sm:py-24 font-sans">
       {/* Badge */}
       <span className="bg-gray-800 text-gray-300 text-xs rounded-full px-3 py-1 mb-6 uppercase tracking-wider select-none">
         Blog

@@ -17,7 +17,7 @@ export default function Logo() {
         alt="WebQuads Logo"
         width={270}
         height={100}
-        className="h-12 w-auto"
+        className="h-8 lg:h-12 w-auto"
       />
     </>
   );
