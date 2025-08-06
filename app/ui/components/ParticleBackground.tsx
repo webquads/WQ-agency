@@ -149,7 +149,7 @@ const ParticleBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full bg-[#000000] -z-10"
+      className="fixed top-0 left-0 w-full h-full  bg-gradient-to-tr from-black via-gray-900 to-black -z-10"
       style={{ width: "100vw", height: "100vh" }}
     />
   );

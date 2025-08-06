@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` w-100vw overflow-x-hidden ${poppins.className} antialiased`}
+        className={`w-[100vw]  overflow-x-hidden ${poppins.className} antialiased`}
       >
         <ParticleBackground />
         <NavBarJs />
