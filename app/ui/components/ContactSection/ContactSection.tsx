@@ -11,6 +11,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { MessageCircle, Send, Phone, MapPin, X } from "lucide-react";
+import Image from "next/image";
+import worldMap from "@/public/world map.png";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -20,7 +22,7 @@ const ContactSection = () => {
     message: "",
   });
 
-  const handleInputChange = (field, value) => {
+  const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({
       ...prev,
       [field]: value,
@@ -31,129 +33,6 @@ const ContactSection = () => {
     console.log("Form submitted:", formData);
     // Handle form submission logic here
   };
-
-  // World map dots pattern (simplified version)
-  const WorldMapDots = () => (
-    <div className="relative w-full h-48 flex items-center justify-center">
-      <svg
-        width="280"
-        height="160"
-        viewBox="0 0 280 160"
-        className="opacity-80"
-      >
-        {/* Simplified world map using dots */}
-        {/* North America */}
-        {Array.from({ length: 15 }, (_, i) => (
-          <circle
-            key={`na-${i}`}
-            cx={40 + (i % 5) * 8}
-            cy={40 + Math.floor(i / 5) * 8}
-            r="1.5"
-            fill="#3B82F6"
-            className="animate-pulse"
-            style={{ animationDelay: `${i * 0.1}s` }}
-          />
-        ))}
-
-        {/* Europe */}
-        {Array.from({ length: 12 }, (_, i) => (
-          <circle
-            key={`eu-${i}`}
-            cx={120 + (i % 4) * 6}
-            cy={35 + Math.floor(i / 4) * 6}
-            r="1.5"
-            fill="#3B82F6"
-            className="animate-pulse"
-            style={{ animationDelay: `${i * 0.15}s` }}
-          />
-        ))}
-
-        {/* Asia */}
-        {Array.from({ length: 20 }, (_, i) => (
-          <circle
-            key={`as-${i}`}
-            cx={160 + (i % 6) * 8}
-            cy={30 + Math.floor(i / 6) * 8}
-            r="1.5"
-            fill="#3B82F6"
-            className="animate-pulse"
-            style={{ animationDelay: `${i * 0.12}s` }}
-          />
-        ))}
-
-        {/* Africa */}
-        {Array.from({ length: 18 }, (_, i) => (
-          <circle
-            key={`af-${i}`}
-            cx={115 + (i % 4) * 7}
-            cy={70 + Math.floor(i / 4) * 8}
-            r="1.5"
-            fill="#3B82F6"
-            className="animate-pulse"
-            style={{ animationDelay: `${i * 0.08}s` }}
-          />
-        ))}
-
-        {/* South America */}
-        {Array.from({ length: 12 }, (_, i) => (
-          <circle
-            key={`sa-${i}`}
-            cx={60 + (i % 3) * 8}
-            cy={90 + Math.floor(i / 3) * 8}
-            r="1.5"
-            fill="#3B82F6"
-            className="animate-pulse"
-            style={{ animationDelay: `${i * 0.2}s` }}
-          />
-        ))}
-
-        {/* Australia */}
-        {Array.from({ length: 8 }, (_, i) => (
-          <circle
-            key={`au-${i}`}
-            cx={210 + (i % 4) * 6}
-            cy={120 + Math.floor(i / 4) * 6}
-            r="1.5"
-            fill="#3B82F6"
-            className="animate-pulse"
-            style={{ animationDelay: `${i * 0.25}s` }}
-          />
-        ))}
-
-        {/* Connection lines */}
-        <line
-          x1="80"
-          y1="60"
-          x2="130"
-          y2="50"
-          stroke="#3B82F6"
-          strokeWidth="1"
-          opacity="0.3"
-          className="animate-pulse"
-        />
-        <line
-          x1="140"
-          y1="45"
-          x2="180"
-          y2="55"
-          stroke="#3B82F6"
-          strokeWidth="1"
-          opacity="0.3"
-          className="animate-pulse"
-        />
-        <line
-          x1="120"
-          y1="80"
-          x2="160"
-          y2="75"
-          stroke="#3B82F6"
-          strokeWidth="1"
-          opacity="0.3"
-          className="animate-pulse"
-        />
-      </svg>
-    </div>
-  );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 py-16 px-4">
@@ -174,7 +53,7 @@ const ContactSection = () => {
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
             {/* World Map */}
             <div className="mb-8">
-              <WorldMapDots />
+              <Image className="w-full h-64" src={worldMap} alt="worldMap" />
             </div>
 
             {/* Contact Information */}
@@ -187,7 +66,7 @@ const ContactSection = () => {
                   <p className="text-sm text-gray-400 uppercase tracking-wide">
                     Phone
                   </p>
-                  <p className="text-lg font-medium">+1 (800) 123-4567</p>
+                  <p className="text-lg font-medium">+88 01829 744341</p>
                 </div>
               </div>
 
@@ -199,9 +78,7 @@ const ContactSection = () => {
                   <p className="text-sm text-gray-400 uppercase tracking-wide">
                     Office
                   </p>
-                  <p className="text-lg font-medium">
-                    859 Dream Avenue, New York
-                  </p>
+                  <p className="text-lg font-medium">Chittagong, Bangladesh</p>
                 </div>
               </div>
             </div>
@@ -302,7 +179,7 @@ const ContactSection = () => {
                       value="saas"
                       className="text-gray-300 focus:bg-gray-700"
                     >
-                      SaaS
+                      Full Stack Web Development
                     </SelectItem>
                     <SelectItem
                       value="others"
