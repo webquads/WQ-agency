@@ -1,11 +1,15 @@
 import BlogButton from "@/app/ui/components/Blog/BlogButton";
-import blogsData from "@/public/Data/blogsData";
+import blogsData from "@/public/data/blogsData";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-export default function BlogDetailPage({ params }) {
-  const blog = blogsData.find((b) => b.id === Number(params.id));
-
+export default async function BlogDetailPage({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const { id } = await params;
+  const blog = blogsData.find((b) => b.id === Number(id));
   if (!blog) return notFound();
 
   return (

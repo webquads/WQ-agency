@@ -24,7 +24,6 @@ html {
   /* Allows natural scrolling */
   /* overflow-x: hidden; */
   /* Prevents horizontal scroll */
-
 }
 
 body {
@@ -78,7 +77,6 @@ body {
 }
 
 @keyframes loader {
-
   0%,
   100% {
     opacity: 100%;
@@ -95,7 +93,7 @@ body {
   }
 
   50% {
-    transform: translateX(180%) translateY(800px) rotate(8deg)
+    transform: translateY(800px);
   }
 
   100% {
@@ -104,11 +102,10 @@ body {
 }
 
 @keyframes marquee {
-  from {
+  from{
     transform: translateX(0)
   }
-
-  to {
+  to{
     transform: translateX(-50%)
   }
 }
