@@ -36,7 +36,6 @@ const TableShapeBackground = () => {
   const rows = 20;
   const cols = 40;
 
-
   const seededRandom = (seed: number) => {
     const x = Math.sin(seed) * 10000;
     return x - Math.floor(x);
@@ -44,7 +43,6 @@ const TableShapeBackground = () => {
 
   const cells = useMemo(() => {
     if (!isClient) {
-
       return Array(rows)
         .fill(null)
         .map((_, i) =>
@@ -52,7 +50,7 @@ const TableShapeBackground = () => {
             .fill(null)
             .map((_, j) => ({
               id: `${i}-${j}`,
-              color: "bg-transparent", // Default color during SSR
+              color: "bg-transparent",
             }))
         );
     }
@@ -73,12 +71,11 @@ const TableShapeBackground = () => {
     return cellArray;
   }, [colors, rows, cols, isClient]);
 
-  // Show loading state or simplified version during SSR
   if (!isClient) {
     return (
       <div className="w-full h-full overflow-hidden relative">
         <div
-          className="absolute top-0 left-0 transform origin-top -skew-x-[30deg]"
+          className="absolute top-0 left-0 transform origin-top lg:-skew-x-[30deg]"
           style={{
             width: "135%",
             height: "100%",
@@ -108,7 +105,7 @@ const TableShapeBackground = () => {
   return (
     <div className="w-full h-full overflow-hidden relative">
       <div
-        className="absolute top-0 left-0 transform origin-top -skew-x-[30deg]"
+        className="absolute top-0 left-0 transform origin-top lg:-skew-x-[30deg]"
         style={{
           width: "135%",
           height: "100%",

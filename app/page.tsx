@@ -43,7 +43,7 @@ const LogoLoading = dynamic(() => import("./ui/components/LogoLoading"));
 
 export default function Home() {
   return (
-    <>
+    <div className="max-w-[1800px] mx-auto">
       {/* Load hero section immediately */}
       <HeroSection />
       <BlogSection />
@@ -89,6 +89,6 @@ export default function Home() {
         />
       </div>
       <LogoLoading />
-    </>
+    </div>
   );
 }
