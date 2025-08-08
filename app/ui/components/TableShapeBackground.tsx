@@ -36,7 +36,7 @@ const TableShapeBackground = () => {
   const rows = 20;
   const cols = 40;
 
-  // Simple seeded random function for consistent results
+
   const seededRandom = (seed: number) => {
     const x = Math.sin(seed) * 10000;
     return x - Math.floor(x);
@@ -44,7 +44,7 @@ const TableShapeBackground = () => {
 
   const cells = useMemo(() => {
     if (!isClient) {
-      // Return empty array during SSR
+
       return Array(rows)
         .fill(null)
         .map((_, i) =>
