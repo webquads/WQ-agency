@@ -13,7 +13,7 @@ export default function BlogCard({ blog }) {
           group relative rounded-lg shadow-lg overflow-hidden
           bg-gray-900 border border-gray-800 transition-transform transform
           hover:scale-105 focus:scale-105
-          flex flex-col
+          flex flex-col [&:not(:hover)]:opacity-100 group-hover:[&:not(:hover)]:opacity-50
         `}
     >
       <div className="relative overflow-hidden rounded-t-lg">
@@ -28,7 +28,7 @@ export default function BlogCard({ blog }) {
           className="absolute inset-0 flex items-center justify-center"
           aria-hidden="true"
         >
-          <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out bg-black bg-opacity-50 rounded-full w-32 h-32 flex items-center justify-center backdrop-blur-sm drop-shadow-lg">
+          <div className="opacity-0 hover:opacity-70 transition-opacity duration-500 ease-in-out bg-black bg-opacity-50 rounded-full w-32 h-32 flex items-center justify-center backdrop-blur-sm drop-shadow-lg">
             <span className="text-white italic text-lg sm:text-xl font-semibold select-none">
               Read
             </span>
