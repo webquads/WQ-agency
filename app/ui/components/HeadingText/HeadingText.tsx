@@ -20,7 +20,7 @@ export const HeadingText = ({
         {heading}
       </h2>
       <h2
-        className={`text-4xl pb-3 md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 font-semibold ${instrumentSerif.className}`}
+        className={`text-4xl pb-3 md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-light-orange to-dark-orange font-semibold ${instrumentSerif.className}`}
       >
         {subHeading}
       </h2>
