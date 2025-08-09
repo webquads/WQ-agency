@@ -3,6 +3,7 @@
 import { Check, X } from "lucide-react";
 import { useState } from "react";
 import GradientBorderButton from "../Button";
+import { HeadingText } from "../HeadingText/HeadingText";
 
 interface Services {
   name: string;
@@ -51,14 +52,14 @@ const PricingSection = () => {
       features: ["No Hidden Fees", "Upgrade Anytime", "Cancel Anytime"],
       services: [
         { name: "Custom Web Application Development", included: true },
-        { name: "E-commerce Web App Development", included: true },
         { name: "Next.js SEO Optimized Website", included: true },
         { name: "Weekly Reporting", included: true },
         { name: "Basic SEO Optimization", included: true },
+        { name: "E-commerce Web App Development", included: true },
         { name: "API Integration & Development", included: true },
         { name: "Payment Gateway Integration", included: true },
         { name: "Dashboard & Admin Panel Development", included: false },
-        { name: "Monthly Performance Reports", included: false },
+        { name: "Monthly Performance Reports", included: true },
         { name: "Advanced Security Implementation", included: false },
         { name: "Cloud Deployment & DevOps", included: false },
         { name: "Maintenance & Support", included: false },
@@ -72,12 +73,12 @@ const PricingSection = () => {
       features: ["No Hidden Fees", "Upgrade Anytime", "Cancel Anytime"],
       services: [
         { name: "Custom Web Application Development", included: true },
-        { name: "E-commerce Web App Development", included: true },
-        { name: "API Integration & Development", included: true },
         { name: "Next.js SEO Optimized Website", included: true },
-        { name: "Dashboard & Admin Panel Development", included: true },
         { name: "Weekly Reporting", included: true },
         { name: "Basic SEO Optimization", included: true },
+        { name: "E-commerce Web App Development", included: true },
+        { name: "API Integration & Development", included: true },
+        { name: "Dashboard & Admin Panel Development", included: true },
         { name: "Monthly Performance Reports", included: true },
         { name: "Advanced Security Implementation", included: true },
         { name: "Cloud Deployment & DevOps", included: true },
@@ -89,12 +90,12 @@ const PricingSection = () => {
 
   const allServices = [
     "Custom Web Application Development",
-    "E-commerce Web App Development",
-    "API Integration & Development",
     "Next.js SEO Optimized Website",
-    "Dashboard & Admin Panel Development",
     "Weekly Reporting",
     "Basic SEO Optimization",
+    "E-commerce Web App Development",
+    "API Integration & Development",
+    "Dashboard & Admin Panel Development",
     "Monthly Performance Reports",
     "Advanced Security Implementation",
     "Cloud Deployment & DevOps",
@@ -119,13 +120,17 @@ const PricingSection = () => {
         <div className="inline-block px-4 py-2 mb-6 text-sm font-medium text-orange-400 bg-orange-400/10 rounded-full border border-orange-400/20">
           Pricing Plan
         </div>
-        <h1 className="text-5xl md:text-6xl font-bold mb-6">
+        {/* <h1 className="text-5xl md:text-6xl font-bold mb-6">
           The Best Service
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
             Package For You
           </span>
-        </h1>
+        </h1> */}
+        <HeadingText
+          heading="Investment Blueprints"
+          subHeading="Clear Pricing, No Surprises"
+        />
       </div>
 
       {/* Main Content Container */}

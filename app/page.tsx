@@ -27,18 +27,18 @@ const TestimonialsSection = dynamic(
 );
 
 // Load logo animations only when needed
-const AnimatedLogo = dynamic(
-  () => import("./ui/components/LoadingAnimation/WebquadsAnimation")
-);
-const AnimatedSVGLogo = dynamic(
-  () => import("./ui/components/LoadingAnimation/AnimatedSVGLogo")
-);
-const AnimatedDualLogo = dynamic(
-  () => import("./ui/components/LoadingAnimation/AnimatedDualLogo")
-);
-const AnimatedDualLogo1 = dynamic(
-  () => import("./ui/components/LoadingAnimation/DrawingLogo1")
-);
+// const AnimatedLogo = dynamic(
+//   () => import("./ui/components/LoadingAnimation/WebquadsAnimation")
+// );
+// const AnimatedSVGLogo = dynamic(
+//   () => import("./ui/components/LoadingAnimation/AnimatedSVGLogo")
+// );
+// const AnimatedDualLogo = dynamic(
+//   () => import("./ui/components/LoadingAnimation/AnimatedDualLogo")
+// );
+// const AnimatedDualLogo1 = dynamic(
+//   () => import("./ui/components/LoadingAnimation/DrawingLogo1")
+// );
 const LogoLoading = dynamic(() => import("./ui/components/LogoLoading"));
 
 export default function Home() {
@@ -60,34 +60,7 @@ export default function Home() {
       <TestimonialsSection />
 
       {/* Load animations last */}
-      <div className="flex justify-center items-center">
-        <AnimatedLogo
-          src="/animLogo.png"
-          alt="Company Logo"
-          width={300}
-          height={300}
-          duration={2.5}
-          repeatDelay={0.5}
-          minScale={0.3}
-          maxScale={1}
-        />
-        <AnimatedSVGLogo
-          src="/animLogo.png"
-          alt="Company Logo"
-          width={300}
-          height={300}
-          duration={4}
-          minScale={0.3}
-        />
-        <AnimatedDualLogo1
-          fullLogoSrc="/animLogo.png"
-          part1Src="/logoPart1.png"
-          part2Src="/logoPart2.png"
-          width={300}
-          height={300}
-          duration={5}
-        />
-      </div>
+
       <LogoLoading />
     </div>
   );

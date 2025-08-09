@@ -3,6 +3,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Custom colors */
+  --light-blue: #00a2fe;
+  --dark-blue: #0066d6;
+  --light-orange: #ff7301;
+  --dark-orange: #ff4500;
+  --yellow: #ffb102;
 }
 
 @theme inline {
@@ -10,12 +16,24 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  /* ... Custom variables ... */
+  --color-light-blue: var(--light-blue);
+  --color-dark-blue: var(--dark-blue);
+  --color-light-orange: var(--light-orange);
+  --color-dark-orange: var(--dark-orange);
+  --color-yellow: var(--yellow);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    /* Custom colors remain the same */
+    --light-blue: #00a2fe;
+    --dark-blue: #0066d6;
+    --light-orange: #ff7301;
+    --dark-orange: #ff4500;
+    --yellow: #ffb102;
   }
 }
 
@@ -102,11 +120,11 @@ body {
 }
 
 @keyframes marquee {
-  from{
-    transform: translateX(0)
+  from {
+    transform: translateX(0);
   }
-  to{
-    transform: translateX(-50%)
+  to {
+    transform: translateX(-50%);
   }
 }
 

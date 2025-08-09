@@ -13,5 +13,3 @@ export const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   display: "swap",
 });
-
-
