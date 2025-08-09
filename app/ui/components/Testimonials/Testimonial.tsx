@@ -1,7 +1,20 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronUp, Code, Palette, Search, Star, Zap } from "lucide-react";
+import {
+  BarChart,
+  Cloud,
+  Code,
+  Database,
+  Globe,
+  LayoutTemplate,
+  Server,
+  Shield,
+  ShoppingCart,
+  Star,
+  Zap,
+} from "lucide-react";
 import { useEffect, useState } from "react";
+import { HeadingText } from "../HeadingText/HeadingText";
 
 // Define a type for the star properties
 interface Star {
@@ -10,47 +23,57 @@ interface Star {
   left: string;
   animationDelay: string;
 }
-
+const icons = {
+  LayoutTemplate,
+  Server,
+  Globe,
+  Zap,
+  Shield,
+  Database,
+  ShoppingCart,
+  BarChart,
+  Cloud,
+};
 const testimonials = [
   {
     id: 1,
     name: "John Smith",
-    position: "Project Manager | WFC",
+    position: "CTO | TechStart Inc",
     rating: 4,
-    text: "As an SEO consultant, I needed a website that not only looked professional but also performed exceptionally in search rankings. OptiRank made it effortless to set up a high-converting, SEO-optimized site!",
-    icon: ChevronUp,
+    text: "We needed a custom web application that could handle complex user interactions and scale with our growth. This agency delivered a robust solution that exceeded our technical requirements and performance expectations.",
+    icon: Code,
   },
   {
     id: 2,
     name: "Sarah Johnson",
-    position: "Marketing Director | TechCorp",
+    position: "Marketing Director | RetailPro",
     rating: 5,
-    text: "The team at OptiRank transformed our digital presence completely. Our website traffic increased by 300% within just 3 months of launch. Absolutely incredible results!",
-    icon: Search,
+    text: "Our new e-commerce platform transformed our online business. The seamless payment integration and intuitive admin panel increased our conversion rate by 45% within the first month. Exceptional development work!",
+    icon: Server,
   },
   {
     id: 3,
     name: "Mike Davis",
-    position: "CEO | StartupXYZ",
+    position: "Founder | StartupXYZ",
     rating: 5,
-    text: "Working with OptiRank was a game-changer for our startup. They delivered a stunning, fast-loading website that perfectly represents our brand and converts visitors into customers.",
-    icon: Code,
+    text: "As a non-technical founder, I needed a development team that could translate my vision into a functional product. They built our MVP in record time with clean code and impressive performance metrics.",
+    icon: Database,
   },
   {
     id: 4,
     name: "Emily Chen",
-    position: "Creative Director | DesignHub",
+    position: "Product Manager | DesignHub",
     rating: 4,
-    text: "The design quality and attention to detail exceeded our expectations. OptiRank created a beautiful, user-friendly interface that our clients absolutely love.",
-    icon: Palette,
+    text: "The dashboard they developed for our analytics platform is both powerful and user-friendly. Their attention to UX details and responsive design made our complex data accessible to all team members.",
+    icon: BarChart,
   },
   {
     id: 5,
     name: "David Wilson",
-    position: "Operations Manager | GrowthCo",
+    position: "Operations Lead | GrowthCo",
     rating: 5,
-    text: "Fast, reliable, and results-driven. OptiRank delivered our project on time and the performance improvements were immediate. Highly recommend their services!",
-    icon: Zap,
+    text: "Their cloud deployment strategy reduced our server costs by 30% while improving site speed. The security implementation gave us peace of mind, and their ongoing support has been invaluable.",
+    icon: LayoutTemplate,
   },
 ];
 
@@ -101,18 +124,17 @@ const TestimonialsSection = () => {
           <div className="inline-flex items-center px-4 py-2 bg-gray-800/50 rounded-full text-sm text-gray-300 mb-8 backdrop-blur-sm border border-gray-700/30">
             Testimonials
           </div>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight">
-            What Our Clients
-          </h2>
-          <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text italic">
-            Are Saying
-          </h3>
+
+          <HeadingText
+            heading="Built for Results"
+            subHeading="Praised by People"
+          />
         </div>
 
         {/* Main content grid */}
         <div className="grid lg:grid-cols-2 gap-20 items-center max-w-6xl mx-auto">
           {/* Left Side - Icon Constellation */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex items-center mx-auto justify-center lg:justify-end">
             <div className="relative w-96 h-96 flex items-center justify-center">
               {/* Center icon (largest) - Non-interactive */}
               <div className="absolute z-40">
