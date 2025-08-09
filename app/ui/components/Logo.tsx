@@ -18,6 +18,7 @@ export default function Logo() {
         width={270}
         height={100}
         className="h-8 lg:h-12 w-auto"
+        href="/"
       />
     </>
   );
