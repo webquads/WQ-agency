@@ -35,9 +35,7 @@ const LogoLoading = () => {
         </span>
         <span
           className={`${
-            loading
-              ? "-translate-x-[34.5%] "
-              : "translate-x-[700%]"
+            loading ? "-translate-x-[34.5%] " : "translate-x-[700%]"
           } transform translate-y-[3.8%] duration-1500`}
         >
           <Image
