@@ -3,6 +3,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronUp, Code, Palette, Search, Star, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 
+// Define a type for the star properties
+interface Star {
+  id: number;
+  top: string;
+  left: string;
+  animationDelay: string;
+}
+
 const testimonials = [
   {
     id: 1,
@@ -49,6 +57,8 @@ const testimonials = [
 const TestimonialsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  // don’t render anything until we are on the client
+  const [mounted, setMounted] = useState(false);
 
   // Auto-cycle through testimonials
   useEffect(() => {
@@ -66,6 +76,10 @@ const TestimonialsSection = () => {
     setTimeout(() => setIsAutoPlaying(true), 10000);
   };
 
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
+
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
@@ -78,21 +92,8 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white py-20 px-4 relative overflow-hidden">
+    <div className="min-h-screen  text-white py-20 px-4 relative overflow-hidden">
       {/* Background dots pattern */}
-      <div className="absolute inset-0 opacity-20">
-        {Array.from({ length: 50 }).map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-white rounded-full"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-            }}
-          />
-        ))}
-      </div>
 
       <div className="max-w-7xl mx-auto">
         {/* Header */}

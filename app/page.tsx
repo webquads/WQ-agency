@@ -1,35 +1,66 @@
-import ContactSection from "@/app/ui/components/ContactSection/ContactSection";
 import HeroSection from "@/app/ui/components/HeroSection/HeroSection";
-// import ScrollNavbar from "@/components/Navbar/ScrollNavbar";
-// import NavBarJs from "@/components/Navbar/NavBarJs";
-// import Navbar from "@/components/Navbar/NavMenu";
-// import NavbarMotion from "@/components/Navbar/NavbarMotion";
-import ServiceSection from "@/app/ui/components/ServiceSection/ServiceSection";
-import TeamMembers from "@/app/ui/components/TeamMembers/TeamMembers";
-import AnimatedDualLogo from "./ui/components/LoadingAnimation/AnimatedDualLogo";
-import AnimatedSVGLogo from "./ui/components/LoadingAnimation/AnimatedSVGLogo";
-import AnimatedLogo from "./ui/components/LoadingAnimation/WebquadsAnimation";
-import PricingSection from "./ui/components/PricingSection/PricingSection";
-import TestimonialsSection from "./ui/components/Testimonials/Testimonial";
-import LogoLoading from "./ui/components/LogoLoading";
+import dynamic from "next/dynamic";
+import BlogSection from "./ui/components/Blog/BlogSection";
+import BlogSectionDemo from "./ui/components/Blog/BlogSectionDemo";
 
-// Your SVG content as a string
+// Lazy load non-critical components
+const About = dynamic(() => import("./ui/components/About/About"));
+const ServiceSection = dynamic(
+  () => import("@/app/ui/components/ServiceSection/ServiceSection")
+);
+const Portfolio = dynamic(() => import("./ui/components/Portfolio/Portfolio"));
+const Process = dynamic(() => import("./ui/components/Process/Process"));
+const ContactSection = dynamic(
+  () => import("@/app/ui/components/ContactSection/ContactSection")
+);
+const TeamMembers = dynamic(
+  () => import("./ui/components/TeamMembers/TeamMembers")
+);
+const PricingSection = dynamic(
+  () => import("./ui/components/PricingSection/PricingSection")
+);
+const TrustIndicator = dynamic(
+  () => import("./ui/components/TrustIndicator/TrustIndicator")
+);
+const TestimonialsSection = dynamic(
+  () => import("./ui/components/Testimonials/Testimonial")
+);
+
+// Load logo animations only when needed
+const AnimatedLogo = dynamic(
+  () => import("./ui/components/LoadingAnimation/WebquadsAnimation")
+);
+const AnimatedSVGLogo = dynamic(
+  () => import("./ui/components/LoadingAnimation/AnimatedSVGLogo")
+);
+const AnimatedDualLogo = dynamic(
+  () => import("./ui/components/LoadingAnimation/AnimatedDualLogo")
+);
+const AnimatedDualLogo1 = dynamic(
+  () => import("./ui/components/LoadingAnimation/DrawingLogo1")
+);
+const LogoLoading = dynamic(() => import("./ui/components/LogoLoading"));
 
 export default function Home() {
   return (
-    <>
-      {/* <ScrollNavbar /> */}
-      {/* <NavBarJs /> */}
-      {/* <NavbarMotion /> */}
-      {/* <Navbar /> */}
+    <div className="max-w-[1800px] mx-auto">
+      {/* Load hero section immediately */}
       <HeroSection />
+      <BlogSection />
+      <BlogSectionDemo />
+      {/* Lazy load other sections */}
+      <About />
       <ServiceSection />
+      <Portfolio />
+      <Process />
       <ContactSection />
       <TeamMembers />
       <PricingSection />
+      <TrustIndicator />
       <TestimonialsSection />
+
+      {/* Load animations last */}
       <div className="flex justify-center items-center">
-        {" "}
         <AnimatedLogo
           src="/animLogo.png"
           alt="Company Logo"
@@ -48,7 +79,7 @@ export default function Home() {
           duration={4}
           minScale={0.3}
         />
-        <AnimatedDualLogo
+        <AnimatedDualLogo1
           fullLogoSrc="/animLogo.png"
           part1Src="/logoPart1.png"
           part2Src="/logoPart2.png"
@@ -57,7 +88,7 @@ export default function Home() {
           duration={5}
         />
       </div>
-      <LogoLoading/>
-    </>
+      <LogoLoading />
+    </div>
   );
 }
