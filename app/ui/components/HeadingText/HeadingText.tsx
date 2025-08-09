@@ -23,7 +23,7 @@ export const HeadingText = ({
         {heading}
       </h2>
       <h2
-        className={`capitalize text-[clamp(2rem,3vw,3rem)] pb-3  text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-600 font-semibold ${instrumentSerif.className}`}
+        className={`capitalize text-[clamp(2rem,3vw,3rem)] pb-3  gradient-text font-semibold ${instrumentSerif.className}`}
       >
         {subHeading}
       </h2>

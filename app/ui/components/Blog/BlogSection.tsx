@@ -7,7 +7,7 @@ export default function BlogSection() {
   const featuredBlogs = blogsData.slice(0, 3);
 
   return (
-    <div className="py-12 px-4 flex flex-col mt-16  items-center min-h-screen">
+    <div className="py-12 px-4 flex flex-col   items-center justify-center min-h-screen">
       <HeadingText
         badge="Blog"
         heading="discover latest technology"
