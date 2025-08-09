@@ -1,13 +1,14 @@
 import BlogButton from "../ui/components/Blog/BlogButton";
-import BlogGridDemo from "../ui/components/Blog/BlogGridDemo";
+
 import blogsData from "../../public/data/blogsData";
+import BlogGrid from "../ui/components/Blog/BlogGrid";
 
 export default function BlogListPage() {
   return (
-    <div className="py-12 px-4 flex flex-col items-center min-h-screen">
+    <div className="py-12 px-4 flex flex-col mt-32 items-center min-h-screen text-white">
       <h1 className="text-4xl font-bold text-center mb-2">All Our Blogs</h1>
-      <p className="text-gray-400 mb-10">Dive deeper into our insights</p>
-      <BlogGridDemo blogs={blogsData} />
+      <p className=" mb-10">Dive deeper into our insights</p>
+      <BlogGrid blogs={blogsData} />
       <BlogButton href="/" text="Back to Home" />
     </div>
   );

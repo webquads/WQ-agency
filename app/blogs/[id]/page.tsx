@@ -1,12 +1,25 @@
-import BlogButton from "@/app/ui/components/Blog/BlogButton";
-import blogsData from "@/public/Data/blogsData";
+import blogsData from "@/public/data/blogsData";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import Link from "next/link";
 
-export default function BlogDetailPage({ params }) {
-  const blog = blogsData.find((b) => b.id === Number(params.id));
+export default async function BlogDetailPage({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const { id } = await params;
+  const blog = blogsData.find((b) => b.id === Number(id));
 
-  if (!blog) return notFound();
+  if (!blog) {
+    return (
+      <div className="text-red-500 text-center py-12">
+        Blog not found.{" "}
+        <Link href="/blogs" className="underline">
+          Go back
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="py-12 px-4 flex flex-col items-center min-h-screen">
@@ -17,11 +30,6 @@ export default function BlogDetailPage({ params }) {
           width={800}
           height={400}
           className="w-full h-80 object-cover object-center rounded-lg mb-8"
-          // onError={(e) => {
-          //   e.target.onerror = null;
-          //   e.target.src =
-          //     "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/420623b8-f2b4-4790-92a9-701eebecdd1a.png";
-          // }}
         />
         <div className="flex justify-between text-sm text-gray-400 mb-4">
           <span>{blog.category}</span>
@@ -30,7 +38,12 @@ export default function BlogDetailPage({ params }) {
         <h1 className="text-4xl font-bold mb-6">{blog.title}</h1>
         <p className="text-gray-300 leading-relaxed text-lg">{blog.content}</p>
       </div>
-      <BlogButton href="/blogs" text="Back to All Blogs" />
+      <Link
+        href="/blogs"
+        className="mt-6 inline-block bg-blue-600 text-white px-6 py-2 rounded-md"
+      >
+        Back to All Blogs
+      </Link>
     </div>
   );
 }
