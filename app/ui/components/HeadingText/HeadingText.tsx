@@ -7,20 +7,23 @@ interface HeadingTextProps {
 }
 
 export const HeadingText = ({
-  heading = "Expert Development Packages",
-  subHeading = "Transparent Pricing for Your Success",
-
+  badge,
+  heading,
+  subHeading,
   className = "",
 }: HeadingTextProps) => {
   return (
     <div
-      className={`flex justify-center flex-col items-center gap-2 z-50 ${className}`}
+      className={`flex justify-center flex-col items-center  z-50 ${className}`}
     >
-      <h2 className="text-8xl text-center font-bold text-gray-200 mb-2">
+      <span className="bg-gray-800 text-gray-300 text-xs rounded-full px-3 py-1  uppercase tracking-wider select-none">
+        {badge}
+      </span>
+      <h2 className="text-[clamp(2.25rem,3vw,4rem)]  text-center font-bold text-gray-200 mb-2 capitalize">
         {heading}
       </h2>
       <h2
-        className={`text-4xl pb-3 md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-light-orange to-dark-orange font-semibold ${instrumentSerif.className}`}
+        className={`capitalize text-[clamp(2rem,3vw,3rem)] pb-3  text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-600 font-semibold ${instrumentSerif.className}`}
       >
         {subHeading}
       </h2>
