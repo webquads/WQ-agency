@@ -19,11 +19,11 @@ export const HeadingText = ({
       <span className="bg-gray-800 text-gray-300 text-xs rounded-full px-3 py-1  uppercase tracking-wider select-none">
         {badge}
       </span>
-      <h2 className="text-[clamp(2.25rem,3vw,4rem)]  text-center font-bold text-gray-200 mb-2 capitalize">
+      <h2 className="text-[clamp(1.5rem,3vw,4rem)]  text-center font-bold text-gray-200 mb-2 capitalize leading-tight">
         {heading}
       </h2>
       <h2
-        className={`capitalize text-[clamp(2rem,3vw,3rem)] pb-3  gradient-text font-semibold ${instrumentSerif.className}`}
+        className={`capitalize text-[clamp(1.5rem,3vw,3rem)] pb-3  gradient-text font-semibold ${instrumentSerif.className}`}
       >
         {subHeading}
       </h2>
