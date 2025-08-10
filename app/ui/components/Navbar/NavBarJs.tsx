@@ -51,7 +51,7 @@ export default function NavBarJs() {
               <a
                 key={link}
                 href="#"
-                className="text-[18px] text-white hover:text-black transition-colors"
+                className="text-[18px] text-white hover-gradient-text transition-colors"
               >
                 {link}
               </a>
