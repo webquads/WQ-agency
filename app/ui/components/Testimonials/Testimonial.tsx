@@ -97,14 +97,14 @@ const TestimonialsSection = () => {
 
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-20 p-10">
           <div className="inline-flex items-center px-4 py-2 bg-gray-800/50 rounded-full text-sm text-gray-300 mb-8 backdrop-blur-sm border border-gray-700/30">
             Testimonials
           </div>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight">
             What Our Clients
           </h2>
-          <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text italic">
+          <h3 className="text-3xl  md:text-4xl lg:text-5xl font-bold text-transparent font- bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text italic">
             Are Saying
           </h3>
         </div>
