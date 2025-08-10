@@ -27,7 +27,6 @@ const TestimonialsSection = dynamic(
 );
 
 // Load logo animations only when needed
-
 // const AnimatedLogo = dynamic(
 //   () => import("./ui/components/LoadingAnimation/WebquadsAnimation")
 // );
@@ -40,11 +39,11 @@ const TestimonialsSection = dynamic(
 // const AnimatedDualLogo1 = dynamic(
 //   () => import("./ui/components/LoadingAnimation/DrawingLogo1")
 // );
-// const LogoLoading = dynamic(() => import("./ui/components/LogoLoading"));
+const LogoLoading = dynamic(() => import("./ui/components/LogoLoading"));
 
 export default function Home() {
   return (
-    <>
+    <div className="max-w-[1800px] mx-auto">
       {/* Load hero section immediately */}
       <HeroSection />
       <BlogSection />
@@ -59,6 +58,10 @@ export default function Home() {
       <PricingSection />
       <TrustIndicator />
       <TestimonialsSection />
-    </>
+
+      {/* Load animations last */}
+
+      <LogoLoading />
+    </div>
   );
 }
