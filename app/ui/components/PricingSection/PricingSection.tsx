@@ -117,7 +117,7 @@ const PricingSection = () => {
     <div className="min-h-screen  text-white">
       {/* Header */}
       <div className="pt-20 pb-16 text-center">
-        <div className="inline-block px-4 py-2 mb-6 text-sm font-medium text-orange-400 bg-orange-400/10 rounded-full border border-orange-400/20">
+        <div className="inline-block px-4 hover- py-2 gradi mb-6 text-sm font-medium text-orange-400 bg-orange-400/10 rounded-full border border-orange-400/20">
           Pricing Plan
         </div>
         {/* <h1 className="text-5xl md:text-6xl font-bold mb-6">

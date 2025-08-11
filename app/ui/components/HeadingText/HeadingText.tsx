@@ -4,6 +4,7 @@ interface HeadingTextProps {
   heading?: string;
   subHeading?: string;
   className?: string;
+  badge?: string;
 }
 
 export const HeadingText = ({

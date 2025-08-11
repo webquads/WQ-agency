@@ -121,11 +121,8 @@ const TestimonialsSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20 p-10">
-          <div className="inline-flex items-center px-4 py-2 bg-gray-800/50 rounded-full text-sm text-gray-300 mb-8 backdrop-blur-sm border border-gray-700/30">
-            Testimonials
-          </div>
-
           <HeadingText
+            badge="Testimonials"
             heading="Built for Results"
             subHeading="Praised by People"
           />
