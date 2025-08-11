@@ -1,3 +1,4 @@
+"use client";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -5,11 +6,8 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-("use client");
-
+import type { ComponentPropsWithoutRef } from "react";
 import * as React from "react";
-import type { ComponentPropsWithoutRef, ElementRef } from "react";
-import { cn } from "@/lib/utils";
 
 /* -------------------------------------------------------------------------- */
 /*                                   Button                                   */
@@ -20,7 +18,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: "default" | "sm" | "lg";
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const SignInButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "default", size = "default", ...props }, ref) => (
     <button
       ref={ref}
@@ -50,7 +48,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     />
   )
 );
-Button.displayName = "Button";
+SignInButton.displayName = "Button";
 
 /* -------------------------------------------------------------------------- */
 /*                                    Input                                   */
@@ -58,7 +56,7 @@ Button.displayName = "Button";
 
 type InputProps = ComponentPropsWithoutRef<"input">;
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
+const SignInInput = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type = "text", ...props }, ref) => (
     <input
       type={type}
@@ -74,7 +72,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     />
   )
 );
-Input.displayName = "Input";
+SignInInput.displayName = "Input";
 
 /* -------------------------------------------------------------------------- */
 /*                                   Select                                   */
@@ -144,4 +142,4 @@ Checkbox.displayName = "Checkbox";
 /*                               Export aliases                               */
 /* -------------------------------------------------------------------------- */
 
-export { Button, Input, Select, Label, Checkbox };
+export { Button, Checkbox, Input, Label, Select };
