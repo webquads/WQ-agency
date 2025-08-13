@@ -1,6 +1,5 @@
 import HeroSection from "@/app/ui/components/HeroSection/HeroSection";
 import dynamic from "next/dynamic";
-import { SignupForm } from "./ui/components/Auth/AuthModel";
 import BlogSection from "./ui/components/Blog/BlogSection";
 
 // Lazy load non-critical components
