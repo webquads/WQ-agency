@@ -57,7 +57,6 @@ export default function Home() {
       <PricingSection />
       <TrustIndicator />
       <TestimonialsSection />
-
       {/* Load animations last */}
 
       <LogoLoading />
