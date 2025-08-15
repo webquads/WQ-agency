@@ -11,8 +11,8 @@ export default function BlogCard({ blog }) {
       onClick={() => router.push(`/blogs/${blog.id}`)}
       className={`
           group relative rounded-lg shadow-lg overflow-hidden
-          bg-gray-900 border border-gray-800 transition-transform transform
-          hover:scale-105 focus:scale-105
+          bg-[#090A15] border border-gray-600 transition-transform transform
+          hover:scale-102 focus:scale-105 
           flex flex-col [&:not(:hover)]:opacity-100 group-hover:[&:not(:hover)]:opacity-50
         `}
     >
