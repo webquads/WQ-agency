@@ -27,7 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/ui/components/HeadingText"
+    "components/HeadingText"
   ],
   "exclude": ["node_modules"]
 }

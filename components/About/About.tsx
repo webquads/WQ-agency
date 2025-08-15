@@ -1,5 +1,5 @@
 import { instrumentSerif } from "@/app/font";
-import GradientBorderButton from "../Button";
+import GradientBorderButton from "../GradientBorderButton";
 
 const About = () => {
   return (

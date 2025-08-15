@@ -2,7 +2,7 @@
 
 import { Check, X } from "lucide-react";
 import { useState } from "react";
-import GradientBorderButton from "../Button";
+import GradientBorderButton from "../GradientBorderButton";
 import { HeadingText } from "../HeadingText/HeadingText";
 
 interface Services {
