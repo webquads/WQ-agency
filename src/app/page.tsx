@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { SignupForm } from "../components/Auth/SignUpForm";
 import BlogSection from "../components/Blog/BlogSection";
 import HeroSection from "../components/HeroSection/HeroSection";
 
@@ -57,6 +58,8 @@ export default function Home() {
       <PricingSection />
       <TrustIndicator />
       <TestimonialsSection />
+      <SignupForm />
+
       {/* Load animations last */}
 
       <LogoLoading />

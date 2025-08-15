@@ -1,19 +1,19 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Eye, EyeOff, Mail, Phone, User } from "lucide-react";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { Button } from "../ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Eye, EyeOff, Mail, Phone, User, X } from "lucide-react";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
+} from "../ui/card";
+import { Checkbox } from "../ui/checkbox";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
 
 interface SignInFormData {
   email: string;
@@ -37,7 +37,7 @@ export function SignupForm() {
   const [isSignUp, setIsSignUp] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  // const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const signInForm = useForm<SignInFormData>({
     defaultValues: {
@@ -73,26 +73,26 @@ export function SignupForm() {
     alert("Account created successfully!");
   };
 
-  if (!isModalOpen) {
-    return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-        <Button onClick={() => setIsModalOpen(true)} size="lg">
-          Open Authentication Modal
-        </Button>
-      </div>
-    );
-  }
+  // if (!isModalOpen) {
+  //   return (
+  //     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+  //       <Button onClick={() => setIsModalOpen(true)} size="lg">
+  //         Open Authentication Modal
+  //       </Button>
+  //     </div>
+  //   );
+  // }
 
   return (
-    <div className="min-h-screen  flex items-center justify-center p-4">
+    <div className="min-h-screen   flex items-center justify-center p-4">
       {/* <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" /> */}
-      <Card className="relative bg-gray-950 w-full max-w-md border-gray-800 overflow-hidden">
-        <button
+      <Card className="relative min-w-xl bg-gray-950 w-full max-w-md border-gray-800 overflow-hidden">
+        {/* <button
           onClick={() => setIsModalOpen(false)}
           className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-10"
         >
           <X size={20} />
-        </button>
+        </button> */}
 
         <CardHeader className="px-6 pt-8 pb-6">
           <CardTitle className="text-2xl font-bold text-white text-center mb-2">
@@ -111,7 +111,7 @@ export function SignupForm() {
               onClick={() => setIsSignUp(false)}
               className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
                 !isSignUp
-                  ? "bg-blue-600 text-white shadow-sm"
+                  ? "bg-dark-orange text-white shadow-sm"
                   : "text-gray-400 hover:text-white"
               }`}
             >
@@ -121,7 +121,7 @@ export function SignupForm() {
               onClick={() => setIsSignUp(true)}
               className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
                 isSignUp
-                  ? "bg-blue-600 text-white shadow-sm"
+                  ? "bg-dark-orange text-white shadow-sm"
                   : "text-gray-400 hover:text-white"
               }`}
             >
@@ -208,7 +208,7 @@ export function SignupForm() {
 
               <Button
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700"
+                className="w-full bg-dark-orange hover:bg-light-orange"
                 size="lg"
                 onClick={(e) => {
                   e.preventDefault();
@@ -379,6 +379,7 @@ export function SignupForm() {
               <div className="space-y-3">
                 <div className="flex items-start space-x-2">
                   <Checkbox
+                    className="border-2 text-xl text-dark-orange"
                     id="agreeToTerms"
                     {...signUpForm.register("agreeToTerms", {
                       required: "You must agree to the terms",
@@ -391,14 +392,14 @@ export function SignupForm() {
                     I agree to the{" "}
                     <button
                       type="button"
-                      className="text-blue-400 hover:text-blue-300"
+                      className="text-dark-orange hover:text-light-orange"
                     >
                       Terms of Service
                     </button>{" "}
                     and{" "}
                     <button
                       type="button"
-                      className="text-blue-400 hover:text-blue-300"
+                      className="text-dark-orange hover:text-light-orange"
                     >
                       Privacy Policy
                     </button>
@@ -413,7 +414,7 @@ export function SignupForm() {
 
               <Button
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700"
+                className="w-full bg-dark-orange hover:bg-light-orange"
                 size="lg"
                 onClick={(e) => {
                   e.preventDefault();
