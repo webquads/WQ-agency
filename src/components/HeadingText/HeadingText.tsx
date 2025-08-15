@@ -1,0 +1,46 @@
+import { instrumentSerif } from "@/src/app/font";
+
+interface HeadingTextProps {
+  heading?: string;
+  subHeading?: string;
+  className?: string;
+  badge?: string;
+}
+
+export const HeadingText = ({
+  badge,
+  heading,
+  subHeading,
+  className = "",
+}: HeadingTextProps) => {
+  return (
+    <div
+      className={`flex justify-center flex-col items-center  z-50 ${className}`}
+    >
+      <span className="bg-gray-800 text-gray-300 text-xs rounded-full px-3 py-1  uppercase tracking-wider select-none">
+        {badge}
+      </span>
+      <h2 className="text-[clamp(1.5rem,3vw,4rem)]  text-center font-bold text-gray-200 mb-2 capitalize leading-tight">
+        {heading}
+      </h2>
+      <h2
+        className={`capitalize text-[clamp(1.5rem,3vw,3rem)] pb-3  gradient-text font-semibold ${instrumentSerif.className}`}
+      >
+        {subHeading}
+      </h2>
+    </div>
+  );
+};
+
+// Default usage (shows original text)
+{
+  /* <HeadingText />
+
+// Custom text
+<HeadingText 
+  heading="Premium Plans" 
+  subHeading="For Your Business" 
+/> */
+}
+
+// With additional styling
