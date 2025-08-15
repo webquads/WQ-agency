@@ -1,0 +1,39 @@
+{
+  "userid": "user_12345",
+  "planId": "web_dev_pro",
+  "planName": "Web Development Pro",
+  "amount": 499.99,
+  "currency": "USD",
+  "purchaseDate": "2025-08-01T14:45:00Z",
+  "expiryDate": null,
+  "status": "in-progress",
+  "projectDetails": {
+    "projectId": "proj_20250801",
+    "projectName": "My Business Website",
+    "status": "Design Phase",
+    "progressPercent": 35,
+    "liveUrl": null,
+    "stagingUrl": "https://staging.exampleproject.com",
+    "repositoryUrl": "https://github.com/johndoe/myproject",
+    "startDate": "2025-08-02T09:00:00Z",
+    "lastUpdated": "2025-08-08T18:30:00Z",
+    "deliverables": [
+      {
+        "fileName": "Homepage Design",
+        "fileUrl": "https://example.com/files/homepage-design.pdf",
+        "uploadedAt": "2025-08-05T15:00:00Z"
+      }
+    ],
+    "feedbackNotes": [
+      {
+        "note": "Please adjust the hero section font size.",
+        "date": "2025-08-06T11:00:00Z",
+        "by": "user"
+      }
+    ],
+    "nextMilestone": {
+      "title": "Frontend Development Start",
+      "dueDate": "2025-08-12T00:00:00Z"
+    }
+  }
+}
