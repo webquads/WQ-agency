@@ -134,6 +134,19 @@ body {
   }
 }
 
+@keyframes marquee1 {
+  0% {
+    right: -20%;
+  }
+  95% {
+    right: 100%;
+  }
+  100% {
+    right: 100%;
+    display: none;
+  }
+}
+
 @keyframes textGradient {
   0% {
     background-position: 0% 50%;

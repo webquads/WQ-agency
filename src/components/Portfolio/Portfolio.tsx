@@ -1,12 +1,36 @@
-import { AiFillAmazonCircle, AiFillBug } from "react-icons/ai";
+"use client"
+
+import { useEffect, useRef } from "react";
 
 const Portfolio = () => {
-  const items = Array(15).fill(null);
+
+  const marQueeRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const marquee = marQueeRef.current;
+      if (!marquee) return;
+
+      const newDiv = document.createElement('div');
+      newDiv.className = 'bg-gray-700 rounded w-[15%] h-full absolute animate-[marquee1_20s_linear_forwards] cursor-pointer';
+
+      newDiv.addEventListener('animationend', () => {
+        if (newDiv.parentNode === marquee) {
+          newDiv.remove();
+        }
+      });
+      marquee.appendChild(newDiv);
+    }, 3000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
   return (
     <div className="w-full flex justify-center items-center flex-col gap-3 mt-8">
       <h1 className="text-3xl text-white">Our Clients & Partners</h1>
       <div className="w-full h-[20vh] mx-h-[100px] p-5 relative overflow-hidden">
-        <div className="flex items-center gap-8 h-full animate-[marquee_20s_linear_infinite] whitespace-nowrap">
+        {/* <div className="flex items-center gap-8 h-full animate-[marquee_20s_linear_infinite] whitespace-nowrap">
           {items.map((_, i) => (
             <div
               key={i}
@@ -25,6 +49,8 @@ const Portfolio = () => {
               <h2 className="hidden md:block">Bug</h2>
             </div>
           ))}
+        </div> */}
+        <div id="marquee" ref={marQueeRef} className="w-full h-full flex items-center relative">
         </div>
         <div className="w-full h-full absolute top-0 left-0 bg-[linear-gradient(to_right,black,transparent_35%_65%,black)] pointer-events-none"></div>
       </div>
