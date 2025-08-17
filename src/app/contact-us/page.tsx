@@ -80,7 +80,7 @@ const ContactUs: React.FC = () => {
               <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
                 3
               </div>
-              <h3 className="text-lg font-semibold">We'll Contact You</h3>
+              <h3 className="text-lg font-semibold">We&apos;ll Contact You</h3>
             </div>
             <p className="text-[#F99E5E] italic text-sm leading-relaxed ml-11">
               Our team will reach out within 24 hours to discuss your project, answer questions, and provide a detailed proposal.
@@ -89,14 +89,14 @@ const ContactUs: React.FC = () => {
 
           <div className="mt-8 p-4 rounded-lg border border-blue-200/30">
             <p className="text-sm text-[#F99E5E] font-medium">
-              💡 Ready to start your project? Fill out the form and let's bring your ideas to life!
+              💡 Ready to start your project? Fill out the form and let&apos;s bring your ideas to life!
             </p>
           </div>
         </div>
 
         {/* Right Section - Form */}
         <div className="w-full lg:w-[70%] p-4 sm:p-6 lg:p-8 bg-transparent">
-          <h1 className="mb-8 text-3xl font-bold">Let's Start Your Project</h1>
+          <h1 className="mb-8 text-3xl font-bold">Let&apos;s Start Your Project</h1>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Personal Information */}
