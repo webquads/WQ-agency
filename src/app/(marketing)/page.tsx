@@ -1,31 +1,31 @@
-import HeroSection from "@/app/ui/components/HeroSection/HeroSection";
+import BlogSection from "@/components/Blog/BlogSection";
+import HeroSection from "@/components/HeroSection/HeroSection";
 import dynamic from "next/dynamic";
-import BlogSection from "../ui/components/Blog/BlogSection";
 
 // Lazy load non-critical components
-const About = dynamic(() => import("../../components/About/About"));
+const About = dynamic(() => import("@/components/About/About"));
 const ServiceSection = dynamic(
   () => import("@/components/ServiceSection/ServiceSection")
 );
-const Portfolio = dynamic(() => import("../../components/Portfolio/Portfolio"));
-const Process = dynamic(() => import("../../components/Process/Process"));
+const Portfolio = dynamic(() => import("@/components/Portfolio/Portfolio"));
+const Process = dynamic(() => import("@/components/Process/Process"));
 const ContactSection = dynamic(
   () => import("@/components/ContactSection/ContactSection")
 );
 const TeamMembers = dynamic(
-  () => import("../../components/TeamMembers/TeamMembers")
+  () => import("@/components/TeamMembers/TeamMembers")
 );
 const PricingSection = dynamic(
-  () => import("../../components/PricingSection/PricingSection")
+  () => import("@/components/PricingSection/PricingSection")
 );
 const TrustIndicator = dynamic(
-  () => import("../../components/TrustIndicator/TrustIndicator")
+  () => import("@/components/TrustIndicator/TrustIndicator")
 );
 const TestimonialsSection = dynamic(
-  () => import("../../components/Testimonials/Testimonial")
+  () => import("@/components/Testimonials/Testimonial")
 );
 
-const LogoLoading = dynamic(() => import("../../components/LogoLoading"));
+const LogoLoading = dynamic(() => import("@/components/LogoLoading"));
 
 export default function HomePage() {
   return (

@@ -59,7 +59,7 @@ body {
   color: var(--foreground);
 }
 
-/* =====keygrames===== */
+/* =====keyframes===== */
 @keyframes reviewPlus {
   0% {
     z-index: 10;

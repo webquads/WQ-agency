@@ -1,11 +1,11 @@
-import blogsData from "@/public/data/blogsData";
 import Image from "next/image";
 import Link from "next/link";
+import blogsData from "../../../../public/Data/blogsData";
 
 export default async function BlogDetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
   const blog = blogsData.find((b) => b.id === Number(id));
