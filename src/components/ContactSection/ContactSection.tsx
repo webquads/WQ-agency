@@ -4,9 +4,9 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 
-import worldMap from "@/public/world map.png";
 import { MapPin, MessageCircle, Phone, Send, X } from "lucide-react";
 import Image from "next/image";
+import worldMap from "../../../public/world map.png";
 import {
   Select,
   SelectContent,

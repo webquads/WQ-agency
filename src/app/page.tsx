@@ -1,45 +1,45 @@
+import { SignupForm } from "@/components/Auth/SignUpForm";
+import BlogSection from "@/components/Blog/BlogSection";
+import HeroSection from "@/components/HeroSection/HeroSection";
 import dynamic from "next/dynamic";
-import { SignupForm } from "../components/Auth/SignUpForm";
-import BlogSection from "../components/Blog/BlogSection";
-import HeroSection from "../components/HeroSection/HeroSection";
 
 // Lazy load non-critical components
-const About = dynamic(() => import("../components/About/About"));
+const About = dynamic(() => import("@/components/About/About"));
 const ServiceSection = dynamic(
-  () => import("../components/ServiceSection/ServiceSection")
+  () => import("@/components/ServiceSection/ServiceSection")
 );
-const Portfolio = dynamic(() => import("../components/Portfolio/Portfolio"));
-const Process = dynamic(() => import("../components/Process/Process"));
+const Portfolio = dynamic(() => import("@/components/Portfolio/Portfolio"));
+const Process = dynamic(() => import("@/components/Process/Process"));
 const ContactSection = dynamic(
-  () => import("../components/ContactSection/ContactSection")
+  () => import("@/components/ContactSection/ContactSection")
 );
 const TeamMembers = dynamic(
-  () => import("../components/TeamMembers/TeamMembers")
+  () => import("@/components/TeamMembers/TeamMembers")
 );
 const PricingSection = dynamic(
-  () => import("../components/PricingSection/PricingSection")
+  () => import("@/components/PricingSection/PricingSection")
 );
 const TrustIndicator = dynamic(
-  () => import("../components/TrustIndicator/TrustIndicator")
+  () => import("@/components/TrustIndicator/TrustIndicator")
 );
 const TestimonialsSection = dynamic(
-  () => import("../components/Testimonials/Testimonial")
+  () => import("@/components/Testimonials/Testimonial")
 );
 
 // Load logo animations only when needed
 // const AnimatedLogo = dynamic(
-//   () => import("./ui/components/LoadingAnimation/WebquadsAnimation")
+//   () => import("@/components/LoadingAnimation/WebquadsAnimation")
 // );
 // const AnimatedSVGLogo = dynamic(
-//   () => import("./ui/components/LoadingAnimation/AnimatedSVGLogo")
+//   () => import("@/components/LoadingAnimation/AnimatedSVGLogo")
 // );
 // const AnimatedDualLogo = dynamic(
-//   () => import("./ui/components/LoadingAnimation/AnimatedDualLogo")
+//   () => import("@/components/LoadingAnimation/AnimatedDualLogo")
 // );
 // const AnimatedDualLogo1 = dynamic(
-//   () => import("./ui/components/LoadingAnimation/DrawingLogo1")
+//   () => import("@/components/LoadingAnimation/DrawingLogo1")
 // );
-const LogoLoading = dynamic(() => import("../components/LogoLoading"));
+const LogoLoading = dynamic(() => import("@/components/LogoLoading"));
 
 export default function Home() {
   return (

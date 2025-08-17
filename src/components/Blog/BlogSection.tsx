@@ -1,4 +1,4 @@
-import blogsData from "@/public/data/blogsData";
+import blogsData from "../../../public/Data/blogsData";
 import { HeadingText } from "../HeadingText/HeadingText";
 import BlogButton from "./BlogButton";
 import BlogGrid from "./BlogGrid";

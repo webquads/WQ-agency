@@ -3,7 +3,20 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-export default function BlogCard({ blog }) {
+interface Blog {
+  id: number;
+  title: string;
+  imageUrl: string;
+  category: string;
+  date: string;
+  content: string;
+}
+
+interface BlogCardProps {
+  blog: Blog;
+}
+
+export default function BlogCard({ blog }: BlogCardProps) {
   const router = useRouter();
 
   return (
