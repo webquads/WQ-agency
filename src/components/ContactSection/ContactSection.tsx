@@ -56,7 +56,7 @@ const ContactSection = () => {
             <div className="mb-8">
               <Image
                 className="w-full h-64"
-                src={"/worldMap.png"}
+                src={"/images/worldMap.png"}
                 width={800}
                 height={800}
                 alt="worldMap"
