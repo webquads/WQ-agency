@@ -1,4 +1,3 @@
-import logo2 from "@/public/images/webQuads_logo-Q2.png";
 import Image from "next/image";
 import Link from "next/link";
 // import logo from "../../../public/images/webQuads_logoQ.png";
@@ -8,7 +7,7 @@ export default function Logo() {
     <>
       <Link href="/">
         <Image
-          src={logo2}
+          src="/images/webQuads_logo-Q2.png"
           alt="WebQuads Logo"
           width={270}
           height={100}
