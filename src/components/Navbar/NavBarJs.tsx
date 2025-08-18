@@ -2,7 +2,7 @@
 import Logo from "@/components/Logo";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-
+import Link from "next/link";
 export default function NavBarJs() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +22,7 @@ export default function NavBarJs() {
     window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const navLinks = ["Pricing", "About", "Press", "Support"];
+  const navLinks = ["Pricing", "About", "Press", "Contact Us", "Support"];
 
   return (
     <>
@@ -48,13 +48,13 @@ export default function NavBarJs() {
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link}
-                href="#"
+                href={`/${link.toLowerCase().replace(/\s/g, "-")}/`}
                 className="text-[18px] text-white hover-gradient-text transition-colors"
               >
                 {link}
-              </a>
+              </Link>
             ))}
           </div>
 

@@ -1,5 +1,9 @@
-import { BlogButtonProps } from "@/types/blog";
 import Link from "next/link";
+
+interface BlogButtonProps {
+  href: string;
+  text: string;
+}
 
 export default function BlogButton({ href, text }: BlogButtonProps) {
   return (
