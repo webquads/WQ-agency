@@ -1,0 +1,68 @@
+import { SignupForm } from "@/components/Auth/SignUpForm";
+import BlogSection from "@/components/Blog/BlogSection";
+import HeroSection from "@/components/HeroSection/HeroSection";
+import dynamic from "next/dynamic";
+
+// Lazy load non-critical components
+const About = dynamic(() => import("@/components/About/About"));
+const ServiceSection = dynamic(
+  () => import("@/components/ServiceSection/ServiceSection")
+);
+const Portfolio = dynamic(() => import("@/components/Portfolio/Portfolio"));
+const Process = dynamic(() => import("@/components/Process/Process"));
+const ContactSection = dynamic(
+  () => import("@/components/ContactSection/ContactSection")
+);
+const TeamMembers = dynamic(
+  () => import("@/components/TeamMembers/TeamMembers")
+);
+const PricingSection = dynamic(
+  () => import("@/components/PricingSection/PricingSection")
+);
+const TrustIndicator = dynamic(
+  () => import("@/components/TrustIndicator/TrustIndicator")
+);
+const TestimonialsSection = dynamic(
+  () => import("@/components/Testimonials/Testimonial")
+);
+
+// Load logo animations only when needed
+// const AnimatedLogo = dynamic(
+//   () => import("@/components/LoadingAnimation/WebquadsAnimation")
+// );
+// const AnimatedSVGLogo = dynamic(
+//   () => import("@/components/LoadingAnimation/AnimatedSVGLogo")
+// );
+// const AnimatedDualLogo = dynamic(
+//   () => import("@/components/LoadingAnimation/AnimatedDualLogo")
+// );
+// const AnimatedDualLogo1 = dynamic(
+//   () => import("@/components/LoadingAnimation/DrawingLogo1")
+// );
+const LogoLoading = dynamic(() => import("@/components/LogoLoading"));
+
+export default function Home() {
+  return (
+    <div className="max-w-[1800px] mx-auto">
+      {/* Load hero section immediately */}
+      <HeroSection />
+      <BlogSection />
+
+      {/* Lazy load other sections */}
+      <About />
+      <ServiceSection />
+      <Portfolio />
+      <Process />
+      <ContactSection />
+      <TeamMembers />
+      <PricingSection />
+      <TrustIndicator />
+      <TestimonialsSection />
+      <SignupForm />
+
+      {/* Load animations last */}
+
+      <LogoLoading />
+    </div>
+  );
+}
