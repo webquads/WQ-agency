@@ -1,19 +1,19 @@
 "use client";
 
-import { Eye, EyeOff, Mail, Phone, User } from "lucide-react";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../ui/card";
-import { Checkbox } from "../ui/checkbox";
-import { Input } from "../ui/input";
-import { Label } from "../ui/label";
+} from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Eye, EyeOff, Mail, Phone, User } from "lucide-react";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 interface SignInFormData {
   email: string;

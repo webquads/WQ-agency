@@ -1,9 +1,10 @@
 "use client";
 
+import { BlogCardProps } from "@/types/blog";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-export default function BlogCard({ blog }) {
+export default function BlogCard({ blog }: BlogCardProps) {
   const router = useRouter();
 
   return (

@@ -1,4 +1,5 @@
-import blogsData from "@/public/data/blogsData";
+import blogsData from "@/data/blogsData";
+import { Blog } from "@/types/blog";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,7 +9,9 @@ export default async function BlogDetailPage({
   params: { id: string };
 }) {
   const { id } = await params;
-  const blog = blogsData.find((b) => b.id === Number(id));
+  const blog: Blog | undefined = blogsData.find(
+    (b: Blog) => b.id === Number(id)
+  );
 
   if (!blog) {
     return (

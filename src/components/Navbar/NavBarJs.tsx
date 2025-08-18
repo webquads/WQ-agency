@@ -1,7 +1,7 @@
 "use client";
+import Logo from "@/components/Logo";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import Logo from "../Logo";
 
 export default function NavBarJs() {
   const [isScrolled, setIsScrolled] = useState(false);

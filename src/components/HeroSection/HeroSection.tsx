@@ -1,4 +1,4 @@
-import TableShapeBackground from "../TableShapeBackground";
+import TableShapeBackground from "@/components/TableShapeBackground";
 import HeroText from "./HeroText";
 
 const HeroSection = () => {

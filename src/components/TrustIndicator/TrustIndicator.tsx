@@ -1,5 +1,5 @@
-import { instrumentSerif } from "@/src/app/font";
-import GradientBorderButton from "../GradientBorderButton";
+import { instrumentSerif } from "@/app/font";
+import GradientBorderButton from "@/components/GradientBorderButton";
 
 const TrustIndicator = () => {
   return (

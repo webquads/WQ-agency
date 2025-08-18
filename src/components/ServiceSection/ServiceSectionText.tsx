@@ -1,4 +1,4 @@
-import { instrumentSerif } from "@/src/app/font";
+import { instrumentSerif } from "@/app/font";
 
 const HeroText = () => {
   return (

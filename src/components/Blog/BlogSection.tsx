@@ -1,5 +1,5 @@
-import blogsData from "@/public/data/blogsData";
-import { HeadingText } from "../HeadingText/HeadingText";
+import { HeadingText } from "@/components/HeadingText/HeadingText";
+import blogsData from "@/data/blogsData";
 import BlogButton from "./BlogButton";
 import BlogGrid from "./BlogGrid";
 

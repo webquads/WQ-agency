@@ -1,5 +1,6 @@
 "use client";
 
+import { HeadingText } from "@/components/HeadingText/HeadingText";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import {
@@ -11,7 +12,6 @@ import {
   FiPhone,
   FiUser,
 } from "react-icons/fi";
-import { HeadingText } from "../HeadingText/HeadingText";
 
 const MeetingScheduler = () => {
   const [formData, setFormData] = useState({

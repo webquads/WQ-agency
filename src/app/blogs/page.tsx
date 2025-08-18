@@ -1,6 +1,6 @@
-import BlogGrid from "@/components/Blog/BlogGrid";
-import blogsData from "../../public/data/blogsData";
 import BlogButton from "@/components/Blog/BlogButton";
+import BlogGrid from "@/components/Blog/BlogGrid";
+import blogsData from "@/data/blogsData";
 
 export default function BlogListPage() {
   return (
