@@ -1,5 +1,5 @@
 import blogsData from "@/data/blogsData";
-import { Blog } from "@/types/blog";
+import { Blog } from "@/shared/types/blog";
 import Image from "next/image";
 import Link from "next/link";
 
