@@ -9,11 +9,11 @@ export interface IContact {
   email: string;
   phone: string;
   country?: string;
-  organization: string;
+  organization?: string;
   websiteUrl?: string;
-  referenceSiteUrl: string;
-  serviceType: "web-development" | "mobile-app" | "ui-ux" | "seo" | "other";
-  budgetRange?: string; // example: "$1000 - $3000"
+  referenceSiteUrl?: string;
+  serviceType: "web-development" | "mobile-apps" | "seo" | "" | "other";
+  budgetRange: string; // example: "$1000 - $3000"
   timeline?: string; // example: "1-3 months"
   projectDescription: string;
   attachments?: IAttachmentInfo[];
