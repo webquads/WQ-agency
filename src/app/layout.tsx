@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 
-import NavBarJs from "../components/Navbar/NavBarJs";
-import ParticleBackground from "../components/ParticleBackground";
+import NavBarJs from "@/components/Navbar/NavBarJs";
+import ParticleBackground from "@/components/ParticleBackground";
 import { poppins } from "./font";
 
 export const metadata: Metadata = {

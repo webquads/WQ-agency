@@ -7,7 +7,6 @@ interface Dot {
   y: number;
   vx: number;
   vy: number;
-  color: string;
 }
 
 const ParticleBackground = () => {
@@ -23,57 +22,49 @@ const ParticleBackground = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Set canvas size
+    // Set canvas size to match viewport
     const setCanvasSize = () => {
       const dpr = window.devicePixelRatio || 1;
-      const rect = canvas.getBoundingClientRect();
 
-      canvas.width = rect.width * dpr;
-      canvas.height = rect.height * dpr;
+      // Use viewport dimensions directly
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
 
       ctx.scale(dpr, dpr);
-      canvas.style.width = rect.width + "px";
-      canvas.style.height = rect.height + "px";
+      canvas.style.width = width + "px";
+      canvas.style.height = height + "px";
     };
 
     setCanvasSize();
 
-    // Reduce dot count for better performance
-    const dotCount = Math.min(
-      30,
-      Math.floor((canvas.width * canvas.height) / 50000)
-    );
+    // Fixed dot count (no extra dots will be produced)
+    const dotCount = 30;
     const dots: Dot[] = [];
 
-    // Pre-calculate colors to avoid repeated hsl() calculations
-    const colors = [
-      "#3b82f6",
-      "#ef4444",
-      "#10b981",
-      "#f59e0b",
-      "#8b5cf6",
-      "#06b6d4",
-      "#f97316",
-      "#84cc16",
-    ];
+    // Get actual canvas dimensions for dot positioning
+    const canvasWidth = window.innerWidth;
+    const canvasHeight = window.innerHeight;
 
+    // Initialize dots with proper boundaries
     for (let i = 0; i < dotCount; i++) {
-      const x = Math.random() * canvas.width;
-      const y = Math.random() * canvas.height;
-      const color = colors[Math.floor(Math.random() * colors.length)];
+      const x = Math.random() * (canvasWidth - 20) + 10; // Keep dots away from edges
+      const y = Math.random() * (canvasHeight - 20) + 10;
 
-      // Reduce speed for smoother animation
-      const speed = Math.random() * 0.15 + 0.05;
+      // Random velocity
+      const speed = Math.random() * 0 + 0.5; // Increased speed for better visibility
       const angle = Math.random() * Math.PI * 2;
       const vx = Math.cos(angle) * speed;
       const vy = Math.sin(angle) * speed;
 
-      dots.push({ x, y, vx, vy, color });
+      dots.push({ x, y, vx, vy});
     }
 
     dotsRef.current = dots;
 
-    // Throttled animation loop (60fps max)
+    // Animation loop
     const animate = (currentTime: number) => {
       if (!ctx || !canvas) return;
 
@@ -85,24 +76,32 @@ const ParticleBackground = () => {
 
       lastTimeRef.current = currentTime;
 
-      // Clear canvas efficiently
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Get current canvas display dimensions
+      const displayWidth = window.innerWidth;
+      const displayHeight = window.innerHeight;
 
-      // Batch updates for better performance
-      ctx.beginPath();
+      // Clear canvas
+      ctx.clearRect(0, 0, displayWidth, displayHeight);
+
+      // Update and draw dots
       dotsRef.current.forEach((dot) => {
+        // Update position
         dot.x += dot.vx;
         dot.y += dot.vy;
 
-        // Wrap around edges
-        if (dot.x > canvas.width) dot.x = 0;
-        if (dot.x < 0) dot.x = canvas.width;
-        if (dot.y > canvas.height) dot.y = 0;
-        if (dot.y < 0) dot.y = canvas.height;
+        // Bounce off edges instead of wrapping (prevents sticking)
+        if (dot.x <= 0 || dot.x >= displayWidth) {
+          dot.vx = -dot.vx;
+          dot.x = Math.max(0, Math.min(displayWidth, dot.x)); // Clamp position
+        }
+        if (dot.y <= 0 || dot.y >= displayHeight) {
+          dot.vy = -dot.vy;
+          dot.y = Math.max(0, Math.min(displayHeight, dot.y)); // Clamp position
+        }
 
-        // Use fillRect instead of arc for better performance
-        ctx.fillStyle = dot.color;
-        ctx.fillRect(dot.x, dot.y, 1.5, 1.5);
+        // Draw dot
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(dot.x - 1, dot.y - 1, 2, 2); // Slightly larger and centered
       });
 
       animationRef.current = requestAnimationFrame(animate);
@@ -111,26 +110,28 @@ const ParticleBackground = () => {
     // Start animation
     animationRef.current = requestAnimationFrame(animate);
 
-    // Debounced resize handler
+    // Resize handler
     let resizeTimeout: NodeJS.Timeout;
     const handleResize = () => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
         if (!canvas) return;
 
-        const oldWidth = canvas.width;
-        const oldHeight = canvas.height;
+        const oldWidth = canvas.style.width ? parseFloat(canvas.style.width) : window.innerWidth;
+        const oldHeight = canvas.style.height ? parseFloat(canvas.style.height) : window.innerHeight;
 
         setCanvasSize();
 
-        const widthRatio = canvas.width / oldWidth;
-        const heightRatio = canvas.height / oldHeight;
+        const newWidth = window.innerWidth;
+        const newHeight = window.innerHeight;
 
-        // Update dot positions proportionally
+        const widthRatio = newWidth / oldWidth;
+        const heightRatio = newHeight / oldHeight;
+
         dotsRef.current = dotsRef.current.map((dot) => ({
           ...dot,
-          x: dot.x * widthRatio,
-          y: dot.y * heightRatio,
+          x: Math.max(0, Math.min(newWidth, dot.x * widthRatio)),
+          y: Math.max(0, Math.min(newHeight, dot.y * heightRatio)),
         }));
       }, 150);
     };
@@ -149,8 +150,12 @@ const ParticleBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 -z-10"
-      style={{ width: "100vw", height: "100vh" }}
+      className="fixed top-0 left-0 -z-10 w-full h-full pointer-events-none"
+      style={{
+        width: "100vw",
+        height: "100vh",
+        display: "block"
+      }}
     />
   );
 };

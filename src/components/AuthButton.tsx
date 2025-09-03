@@ -142,4 +142,10 @@ Checkbox.displayName = "Checkbox";
 /*                               Export aliases                               */
 /* -------------------------------------------------------------------------- */
 
-export { Button, Checkbox, Input, Label, Select };
+export {
+  SignInButton as Button,
+  Checkbox,
+  SignInInput as Input,
+  Label,
+  Select,
+};

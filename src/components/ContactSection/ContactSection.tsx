@@ -1,19 +1,19 @@
 "use client";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
-import { Textarea } from "../ui/textarea";
 
-import worldMap from "@/public/world map.png";
-import { MapPin, MessageCircle, Phone, Send, X } from "lucide-react";
-import Image from "next/image";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/select";
+} from "@/components/ui/select";
+
+import { MapPin, MessageCircle, Phone, Send, X } from "lucide-react";
+import Image from "next/image";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -54,7 +54,13 @@ const ContactSection = () => {
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
             {/* World Map */}
             <div className="mb-8">
-              <Image className="w-full h-64" src={worldMap} alt="worldMap" />
+              <Image
+                className="w-full h-64"
+                src={"/images/worldMap.png"}
+                width={800}
+                height={800}
+                alt="worldMap"
+              />
             </div>
 
             {/* Contact Information */}
