@@ -139,7 +139,8 @@ src/
 │ │ │ ├── queries.ts
 │ │ │ └── services.ts
 │ │ ├── types.ts
-│ │ ├── schemas.ts
+│ │ ├── schemas.ts # Zod validation
+│ │ └── constants.ts
 │ │ └── constants.ts
 │ │
 │ ├── blog/
@@ -157,7 +158,7 @@ src/
 │ │ │ ├── queries.ts
 │ │ │ └── services.ts
 │ │ ├── types.ts
-│ │ ├── schemas.ts
+│ │ ├── schemas.ts # Zod validation
 │ │ └── constants.ts
 │ │
 │ ├── team/
@@ -172,7 +173,7 @@ src/
 │ │ │ ├── queries.ts
 │ │ │ └── services.ts
 │ │ ├── types.ts
-│ │ ├── schemas.ts
+│ │ ├── schemas.ts # Zod validation
 │ │ └── constants.ts
 │ │
 │ ├── testimonials/
@@ -187,7 +188,7 @@ src/
 │ │ │ ├── queries.ts
 │ │ │ └── services.ts
 │ │ ├── types.ts
-│ │ ├── schemas.ts
+│ │ ├── schemas.ts # Zod validation
 │ │ └── constants.ts
 │ │
 │ ├── contact/
@@ -203,7 +204,7 @@ src/
 │ │ │ ├── queries.ts
 │ │ │ └── services.ts
 │ │ ├── types.ts
-│ │ ├── schemas.ts
+│ │ ├── schemas.ts # Zod validation
 │ │ └── constants.ts
 │ │
 │ ├── analytics/
